@@ -2224,3 +2224,464 @@ Processing by Api::BoardsController#index as JSON
 Completed 200 OK in 90ms (Views: 18.1ms | ActiveRecord: 65.2ms | Allocations: 6180)
 
 
+  [1m[35m (15.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4539074736204228780)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLists (20200623160014)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "lists" ("id" bigserial primary key, "title" character varying, "position" float, "board_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0d3f677137"
+FOREIGN KEY ("board_id")
+  REFERENCES "boards" ("id")
+)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_lists_on_board_id" ON "lists"  ("board_id")[0m
+  [1m[36mprimary::SchemaMigration Create (2.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200623160014"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4539074736204228780)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4539074736204228780)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCards (20200623160816)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4539074736204228780)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4539074736204228780)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCards (20200623160816)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "cards" ("id" bigserial primary key, "title" character varying, "due_date" timestamp, "labels" character varying[] DEFAULT '{}', "description" character varying, "position" float, "list_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_11b32bc490"
+FOREIGN KEY ("list_id")
+  REFERENCES "lists" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX  "index_cards_on_list_id" ON "cards"  ("list_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200623160816"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4539074736204228780)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4539074736204228780)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCards (20200623160816)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.9ms)[0m  [1m[35mDROP TABLE "cards"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200623160816"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4539074736204228780)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4539074736204228780)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCards (20200623160816)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "cards" ("id" bigserial primary key, "title" character varying, "due_date" timestamp, "labels" character varying[] DEFAULT '{}', "description" character varying, "position" float, "list_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_11b32bc490"
+FOREIGN KEY ("list_id")
+  REFERENCES "lists" ("id")
+)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_cards_on_list_id" ON "cards"  ("list_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200623160816"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4539074736204228780)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Create (6.6ms)[0m  [1m[32mINSERT INTO "boards" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Tuesday"], ["created_at", "2020-06-23 16:18:13.028464"], ["updated_at", "2020-06-23 16:18:13.028464"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mList Create (3.0ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Rails stuff"], ["board_id", 3], ["created_at", "2020-06-23 16:19:30.106679"], ["updated_at", "2020-06-23 16:19:30.106679"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCard Create (4.3ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "React stuff"], ["description", "React stuff description"], ["list_id", 1], ["created_at", "2020-06-23 16:23:35.806832"], ["updated_at", "2020-06-23 16:23:35.806832"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCard Update (0.2ms)[0m  [1m[33mUPDATE "cards" SET "labels" = $1, "updated_at" = $2 WHERE "cards"."id" = $3[0m  [["labels", nil], ["updated_at", "2020-06-23 16:23:52.419828"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4539074736204228780)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCards (20200623160816)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "cards"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200623160816"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4539074736204228780)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4539074736204228780)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCards (20200623160816)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "cards" ("id" bigserial primary key, "title" character varying, "due_date" timestamp, "labels" character varying[] DEFAULT '{}' NOT NULL, "description" character varying, "position" float, "list_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_11b32bc490"
+FOREIGN KEY ("list_id")
+  REFERENCES "lists" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX  "index_cards_on_list_id" ON "cards"  ("list_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200623160816"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(4539074736204228780)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCard Update (5.1ms)[0m  [1m[33mUPDATE "cards" SET "labels" = $1, "updated_at" = $2 WHERE "cards"."id" = $3[0m  [["labels", "{}"], ["updated_at", "2020-06-23 16:26:31.130596"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCard Update (0.2ms)[0m  [1m[33mUPDATE "cards" SET "labels" = $1, "updated_at" = $2 WHERE "cards"."id" = $3[0m  [["labels", nil], ["updated_at", "2020-06-23 16:26:38.420400"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCard Update (0.2ms)[0m  [1m[33mUPDATE "cards" SET "labels" = $1, "updated_at" = $2 WHERE "cards"."id" = $3[0m  [["labels", "{}"], ["updated_at", "2020-06-23 16:27:53.186194"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCard Update (0.2ms)[0m  [1m[33mUPDATE "cards" SET "labels" = $1, "updated_at" = $2 WHERE "cards"."id" = $3[0m  [["labels", nil], ["updated_at", "2020-06-23 16:28:02.264270"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1 LIMIT $2[0m  [["board_id", 1], ["LIMIT", 11]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1 LIMIT $2[0m  [["board_id", 3], ["LIMIT", 11]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCard Create (4.6ms)[0m  [1m[32mINSERT INTO "cards" ("title", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "React blah"], ["list_id", 1], ["created_at", "2020-06-23 16:33:33.014005"], ["updated_at", "2020-06-23 16:33:33.014005"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1 LIMIT $2[0m  [["list_id", 1], ["LIMIT", 11]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1 AND "lists"."id" = $2 LIMIT $3[0m  [["board_id", 3], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1 LIMIT $2[0m  [["list_id", 1], ["LIMIT", 11]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY "cards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY "cards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY "cards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY "cards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCard Update (2.4ms)[0m  [1m[33mUPDATE "cards" SET "labels" = $1, "updated_at" = $2 WHERE "cards"."id" = $3[0m  [["labels", nil], ["updated_at", "2020-06-23 16:36:01.614185"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/api/boards/4.json" for ::1 at 2020-06-23 09:51:03 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:22:in `show'
+  Rendering api/boards/show.json.jbuilder
+  Rendered api/boards/show.json.jbuilder (Duration: 3.8ms | Allocations: 1710)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.3ms | Allocations: 6655)
+
+
+  
+ActionView::Template::Error (undefined method `attributes' for nil:NilClass):
+    1: json.merge! @board.attributes
+    2: 
+    3: json.lists(@board.lists) do |list|
+    4:   json.merge! list.attributes
+  
+app/views/api/boards/show.json.jbuilder:1
+app/controllers/api/boards_controller.rb:23:in `show'
+Started GET "/api/boards/4.json" for ::1 at 2020-06-23 09:52:16 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  Rendered api/boards/show.json.jbuilder (Duration: 1.4ms | Allocations: 1200)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.9ms | Allocations: 4566)
+
+
+  
+ActionView::MissingTemplate (Missing template api/shared/error with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.2/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/api/boards_controller.rb:26:in `rescue in show'
+app/controllers/api/boards_controller.rb:21:in `show'
+Started GET "/api/boards/4.json" for ::1 at 2020-06-23 09:52:47 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  Rendered api/boards/show.json.jbuilder (Duration: 1.1ms | Allocations: 1198)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 12.3ms | Allocations: 4162)
+
+
+  
+ActionView::MissingTemplate (Missing template api/shared/error with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.2/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/api/boards_controller.rb:27:in `rescue in show'
+app/controllers/api/boards_controller.rb:21:in `show'
+Started GET "/api/boards/4.json" for ::1 at 2020-06-23 09:54:03 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  Rendering api/boards/show.json.jbuilder
+  Rendered api/boards/show.json.jbuilder (Duration: 0.9ms | Allocations: 1211)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1851)
+
+
+  
+ActionView::Template::Error (undefined method `attributes' for nil:NilClass):
+    1: json.merge! @board.attributes
+    2: 
+    3: json.lists(@board.lists) do |list|
+    4:   json.merge! list.attributes
+  
+app/views/api/boards/show.json.jbuilder:1
+Started GET "/api/boards/4.json" for ::1 at 2020-06-23 09:56:57 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  Rendered api/boards/show.json.jbuilder (Duration: 1.4ms | Allocations: 1196)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 4.7ms | Allocations: 4141)
+
+
+  
+ActionView::MissingTemplate (Missing template api/shared/error with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.2/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/api/boards_controller.rb:27:in `rescue in show'
+app/controllers/api/boards_controller.rb:21:in `show'
+Started GET "/api/boards/4.json" for ::1 at 2020-06-23 09:57:23 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  Rendered api/boards/show.json.jbuilder (Duration: 3.0ms | Allocations: 1196)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.2ms | Allocations: 4158)
+
+
+  
+ActionView::MissingTemplate (Missing template api/shared/error with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.2/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/api/boards_controller.rb:27:in `rescue in show'
+app/controllers/api/boards_controller.rb:21:in `show'
+Started GET "/api/boards/4.json" for ::1 at 2020-06-23 09:58:03 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  Rendered api/boards/show.json.jbuilder (Duration: 0.9ms | Allocations: 1196)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms | Allocations: 3632)
+
+
+  
+ActionView::Template::Error (undefined method `attributes' for nil:NilClass):
+    1: json.merge! @board.attributes
+    2: 
+    3: json.lists(@board.lists) do |list|
+    4:   json.merge! list.attributes
+  
+app/views/api/boards/show.json.jbuilder:1
+app/controllers/api/boards_controller.rb:24:in `show'
+Started GET "/api/boards/4.json" for ::1 at 2020-06-23 09:59:23 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 7.9ms | Allocations: 2991)
+
+
+  
+ActionView::MissingTemplate (Missing template api/shared/error with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.2/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/api/boards_controller.rb:27:in `rescue in show'
+app/controllers/api/boards_controller.rb:21:in `show'
+Started GET "/api/boards/4.json" for ::1 at 2020-06-23 09:59:37 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 3.5ms | Allocations: 4886)
+
+
+  
+ActionView::MissingTemplate (Missing template api/shared/error with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.2/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/api/boards_controller.rb:27:in `rescue in show'
+app/controllers/api/boards_controller.rb:21:in `show'
+Started GET "/api/boards/4.json" for ::1 at 2020-06-23 10:01:53 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 19.9ms | Allocations: 3387)
+
+
+  
+ActionView::MissingTemplate (Missing template views/shared/error with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.2/app/views"
+  * "/Users/jeremy/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/api/boards_controller.rb:27:in `rescue in show'
+app/controllers/api/boards_controller.rb:21:in `show'
+Started GET "/api/boards/4.json" for ::1 at 2020-06-23 10:02:06 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering shared/error.json.jbuilder
+  Rendered shared/error.json.jbuilder (Duration: 2.0ms | Allocations: 106)
+Completed 404 Not Found in 22ms (Views: 4.8ms | ActiveRecord: 13.1ms | Allocations: 3811)
+
+
+Started GET "/api/boards/4.json" for ::1 at 2020-06-23 10:02:35 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 1.3ms | Allocations: 100)
+Completed 404 Not Found in 13ms (Views: 4.4ms | ActiveRecord: 3.6ms | Allocations: 3813)
+
+
+Started GET "/" for ::1 at 2020-06-23 11:01:50 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 190)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4660ms (Views: 4599.9ms | ActiveRecord: 0.0ms | Allocations: 1777473)
+
+
+Started GET "/" for ::1 at 2020-06-23 11:06:15 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 190)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3293ms (Views: 3278.2ms | ActiveRecord: 0.0ms | Allocations: 1764959)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-23 11:06:18 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 107.1ms | Allocations: 3778)
+Completed 200 OK in 216ms (Views: 183.9ms | ActiveRecord: 5.9ms | Allocations: 9238)
+
+
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Create (235.5ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Testing Delete"], ["board_id", 1], ["created_at", "2020-06-23 18:24:57.142667"], ["updated_at", "2020-06-23 18:24:57.142667"]]
+  [1m[35m (34.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBoard Destroy (104.9ms)[0m  [1m[31mDELETE FROM "boards" WHERE "boards"."id" = $1[0m  [["id", 1]]
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBoard Destroy (0.8ms)[0m  [1m[31mDELETE FROM "boards" WHERE "boards"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4539074736204228780)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeleteDependent (20200623183059)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4539074736204228780)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4539074736204228780)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeleteDependent (20200623183059)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4539074736204228780)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Create (36.2ms)[0m  [1m[32mINSERT INTO "boards" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "First board"], ["created_at", "2020-06-23 18:43:12.208732"], ["updated_at", "2020-06-23 18:43:12.208732"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mList Create (0.8ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "First List"], ["board_id", 2], ["created_at", "2020-06-23 18:43:12.340311"], ["updated_at", "2020-06-23 18:43:12.340311"]]
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mList Create (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Second List"], ["board_id", 2], ["created_at", "2020-06-23 18:43:12.385780"], ["updated_at", "2020-06-23 18:43:12.385780"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCard Create (12.0ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 1 of List 1"], ["description", "Card1_1"], ["list_id", 2], ["created_at", "2020-06-23 18:43:12.527005"], ["updated_at", "2020-06-23 18:43:12.527005"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 2 of List 1"], ["description", "Card1_2"], ["list_id", 2], ["created_at", "2020-06-23 18:43:12.544819"], ["updated_at", "2020-06-23 18:43:12.544819"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 1 of List 2"], ["description", "Card2_1"], ["list_id", 3], ["created_at", "2020-06-23 18:43:12.550193"], ["updated_at", "2020-06-23 18:43:12.550193"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 2 of List 2"], ["description", "Card2_2"], ["list_id", 3], ["created_at", "2020-06-23 18:43:12.555561"], ["updated_at", "2020-06-23 18:43:12.555561"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCard Create (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 3 of List 2"], ["description", "Card2_3"], ["list_id", 3], ["created_at", "2020-06-23 18:43:12.560484"], ["updated_at", "2020-06-23 18:43:12.560484"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBoard Load (0.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBoard Destroy (15.3ms)[0m  [1m[31mDELETE FROM "boards" WHERE "boards"."id" = $1[0m  [["id", 1]]
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 1]]
+  [1m[36mList Destroy (1.1ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = $1[0m  [["id", 1]]
+  [1m[36mBoard Destroy (0.4ms)[0m  [1m[31mDELETE FROM "boards" WHERE "boards"."id" = $1[0m  [["id", 1]]
+  [1m[35m (40.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 2]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  [1m[36mCard Destroy (0.2ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 1]]
+  [1m[36mCard Destroy (0.2ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 2]]
+  [1m[36mList Destroy (0.3ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = $1[0m  [["id", 2]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  [1m[36mCard Destroy (0.2ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 3]]
+  [1m[36mCard Destroy (0.6ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 4]]
+  [1m[36mCard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 5]]
+  [1m[36mList Destroy (0.4ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = $1[0m  [["id", 3]]
+  [1m[36mBoard Destroy (0.7ms)[0m  [1m[31mDELETE FROM "boards" WHERE "boards"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" LIMIT $1[0m  [["LIMIT", 11]]

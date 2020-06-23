@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_06_23_160816) do
   create_table "cards", force: :cascade do |t|
     t.string "title"
     t.datetime "due_date"
-    t.string "labels", default: [], array: true
+    t.string "labels", default: [], null: false, array: true
     t.string "description"
     t.float "position"
     t.bigint "list_id", null: false

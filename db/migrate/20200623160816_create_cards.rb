@@ -3,7 +3,7 @@ class CreateCards < ActiveRecord::Migration[6.0]
     create_table :cards do |t|
       t.string :title
       t.datetime :due_date
-      t.string :labels, array: true, default: []
+      t.string :labels, array: true, default: [], null: false
       t.string :description
       t.float :position
 

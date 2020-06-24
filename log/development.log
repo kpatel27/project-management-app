@@ -3645,3 +3645,99 @@ Processing by Api::BoardsController#index as JSON
 Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 1197)
 
 
+Started GET "/" for 127.0.0.1 at 2020-06-25 02:30:00 +0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 352)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: eccfd8b740b21faf847b
+Version: webpack 4.43.0
+Time: 17127ms
+Built at: 06/25/2020 2:30:23 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-995dc626d8a60b4a6ab3.js    1.8 MiB  application  [emitted] [immutable]  application
+js/application-995dc626d8a60b4a6ab3.js.map   1.97 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-995dc626d8a60b4a6ab3.js js/application-995dc626d8a60b4a6ab3.js.map
+[./app/javascript/actions/BoardActions.js] 1.35 KiB {application} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/constants/ActionTypes.js] 287 bytes {application} [built]
+[./app/javascript/constants/ApiRoutes.js] 89 bytes {application} [built]
+[./app/javascript/lib/ApiClient.js] 1.08 KiB {application} [built]
+[./app/javascript/lib/Store.js] 221 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.89 KiB {application} [built]
+[./app/javascript/reducers/boards.js] 1.95 KiB {application} [built]
+[./app/javascript/reducers/cards.js] 3.41 KiB {application} [built] [failed] [1 error]
+[./app/javascript/reducers/lists.js] 350 bytes {application} [built]
+[./app/javascript/reducers/rootReducer.js] 246 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 99 hidden modules
+
+ERROR in ./app/javascript/components/board/BoardContainer.js 16:60-65
+"export 'default' (imported as 'Board') was not found in './Board'
+ @ ./app/javascript/components/Application.jsx
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./app/javascript/reducers/cards.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/edmondtam/LS/capstone/frameworks/project-management-app/app/javascript/reducers/cards.js: Unexpected token, expected ";" (1:44)
+
+> 1 | export default cards = (state = [], action) {
+    |                                             ^
+  2 |   switch (action.type) {
+  3 |     case "FETCH_BOARD_SUCCESS":
+  4 |       const { list } = action.board;
+    at Object._raise (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:754:17)
+    at Object.raiseWithData (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:747:17)
+    at Object.raise (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:741:17)
+    at Object.unexpected (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:8844:16)
+    at Object.semicolon (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:8826:40)
+    at Object.parseExportDefaultExpression (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:12396:12)
+    at Object.parseExport (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:12297:31)
+    at Object.parseStatementContent (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:11297:27)
+    at Object.parseStatement (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:11193:17)
+    at Object.parseBlockOrModuleBlockBody (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:11768:25)
+    at Object.parseBlockBody (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:11754:10)
+    at Object.parseTopLevel (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:11124:10)
+    at Object.parse (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:12826:10)
+    at parse (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:12879:38)
+    at parser (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/core/lib/parser/index.js:54:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)
+    at normalizeFile.next (<anonymous>)
+    at run (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/core/lib/transformation/index.js:31:50)
+    at run.next (<anonymous>)
+    at Function.transform (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/core/lib/transform.js:27:41)
+    at transform.next (<anonymous>)
+    at step (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/gensync/index.js:254:32)
+    at /home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/gensync/index.js:266:13
+    at async.call.result.err.err (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/gensync/index.js:216:11)
+ @ ./app/javascript/reducers/rootReducer.js 4:0-28 8:9-14
+ @ ./app/javascript/lib/Store.js
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 22222ms (Views: 22197.4ms | ActiveRecord: 0.0ms | Allocations: 2422236)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 02:30:54 +0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 189)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1651ms (Views: 1643.0ms | ActiveRecord: 0.0ms | Allocations: 1703842)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 02:31:19 +0800
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.0ms | Allocations: 8140)
+
+

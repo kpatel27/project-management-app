@@ -4,6 +4,7 @@ export default function boards(state = [], action) {
       //const excludedBoards = // filter boards from state and exclude board from server
       // destructure {lists, ...boardWithoutLists} action.board
       const board = action.board;
+      console.log(board, state);
       // const excludedBoards = state.boards.filter(b => b.id !== board.id);
       // const { lists, ...boardWithoutLists } = board;
       // return excludedBoards.concat(boardWithoutLists);

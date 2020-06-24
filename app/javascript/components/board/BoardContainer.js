@@ -1,11 +1,9 @@
 import { connect } from 'react-redux';
 import Board from './Board';
-import store from '../../lib/Store';
 import { fetchBoard } from '../../actions/BoardActions';
 
-const mapStateToProps = state => ({
-  // lists: state.lists,
-  // cards: state.cards,
+const mapStateToProps = (state, ownProps) => ({
+  board: state.boards.find(board => board.id === +ownProps.match.params.id),
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -16,4 +14,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(Board);
+export default connect(mapStateToProps, mapDispatchToProps)(Board);

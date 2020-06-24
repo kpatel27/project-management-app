@@ -1,13 +1,10 @@
 export default function boards(state = [], action) {
   switch (action.type) {
     case 'FETCH_BOARD_SUCCESS':
-      //const excludedBoards = // filter boards from state and exclude board from server
-      // destructure {lists, ...boardWithoutLists} action.board
       const board = action.board;
-      // const excludedBoards = state.boards.filter(b => b.id !== board.id);
-      // const { lists, ...boardWithoutLists } = board;
-      // return excludedBoards.concat(boardWithoutLists);
-      return board;
+      const excludedBoards = state.filter(b => b.id !== board.id);
+      const { lists, ...boardWithoutLists } = board;
+      return excludedBoards.concat(boardWithoutLists);
     case 'FETCH_BOARDS_SUCCESS':
       return action.boards;
     case 'CREATE_BOARD_SUCCESS':

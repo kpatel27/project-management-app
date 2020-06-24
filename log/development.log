@@ -4400,3 +4400,112 @@ Completed 200 OK in 13ms (Views: 2.5ms | ActiveRecord: 9.1ms | Allocations: 3801
 >>>>>>> 9c66450684a54289d55f6d263203813bba3f8695
 
 
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4539074736204228780)[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4539074736204228780)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (1.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 3]]
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 1]]
+  [1m[36mCard Destroy (1.1ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 1]]
+  [1m[36mCard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 2]]
+  [1m[36mList Destroy (2.8ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = $1[0m  [["id", 1]]
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  [1m[36mCard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 3]]
+  [1m[36mCard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 4]]
+  [1m[36mCard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 5]]
+  [1m[36mList Destroy (0.4ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = $1[0m  [["id", 2]]
+  [1m[36mBoard Destroy (0.5ms)[0m  [1m[31mDELETE FROM "boards" WHERE "boards"."id" = $1[0m  [["id", 3]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Create (1.7ms)[0m  [1m[32mINSERT INTO "boards" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "First board"], ["created_at", "2020-06-24 18:40:21.667783"], ["updated_at", "2020-06-24 18:40:21.667783"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mList Create (0.8ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "First List"], ["board_id", 4], ["created_at", "2020-06-24 18:40:21.678436"], ["updated_at", "2020-06-24 18:40:21.678436"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mList Create (0.5ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Second List"], ["board_id", 4], ["created_at", "2020-06-24 18:40:21.700160"], ["updated_at", "2020-06-24 18:40:21.700160"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCard Create (0.7ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 1 of List 1"], ["description", "Card1_1"], ["list_id", 3], ["created_at", "2020-06-24 18:40:21.717891"], ["updated_at", "2020-06-24 18:40:21.717891"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 2 of List 1"], ["description", "Card1_2"], ["list_id", 3], ["created_at", "2020-06-24 18:40:21.733286"], ["updated_at", "2020-06-24 18:40:21.733286"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 1 of List 2"], ["description", "Card2_1"], ["list_id", 4], ["created_at", "2020-06-24 18:40:21.757492"], ["updated_at", "2020-06-24 18:40:21.757492"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCard Create (1.0ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 2 of List 2"], ["description", "Card2_2"], ["list_id", 4], ["created_at", "2020-06-24 18:40:21.787716"], ["updated_at", "2020-06-24 18:40:21.787716"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCard Create (1.1ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 3 of List 2"], ["description", "Card2_3"], ["list_id", 4], ["created_at", "2020-06-24 18:40:21.795891"], ["updated_at", "2020-06-24 18:40:21.795891"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBoard Load (2.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (1.9ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  [1m[36mCard Destroy (1.0ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 6]]
+  [1m[36mCard Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 7]]
+  [1m[36mList Destroy (1.5ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = $1[0m  [["id", 3]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 4]]
+  [1m[36mCard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 8]]
+  [1m[36mCard Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 9]]
+  [1m[36mCard Destroy (0.4ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 10]]
+  [1m[36mList Destroy (0.6ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = $1[0m  [["id", 4]]
+  [1m[36mBoard Destroy (0.5ms)[0m  [1m[31mDELETE FROM "boards" WHERE "boards"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Create (0.5ms)[0m  [1m[32mINSERT INTO "boards" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "First board"], ["created_at", "2020-06-24 19:11:43.725466"], ["updated_at", "2020-06-24 19:11:43.725466"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mList Create (0.5ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "First List"], ["board_id", 5], ["created_at", "2020-06-24 19:11:43.748914"], ["updated_at", "2020-06-24 19:11:43.748914"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mList Create (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Second List"], ["board_id", 5], ["created_at", "2020-06-24 19:11:43.778333"], ["updated_at", "2020-06-24 19:11:43.778333"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCard Create (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 1 of List 1"], ["description", "Card1_1"], ["list_id", 5], ["created_at", "2020-06-24 19:11:43.788840"], ["updated_at", "2020-06-24 19:11:43.788840"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 2 of List 1"], ["description", "Card1_2"], ["list_id", 5], ["created_at", "2020-06-24 19:11:43.795561"], ["updated_at", "2020-06-24 19:11:43.795561"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCard Create (0.6ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 1 of List 2"], ["description", "Card2_1"], ["list_id", 6], ["created_at", "2020-06-24 19:11:43.804904"], ["updated_at", "2020-06-24 19:11:43.804904"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCard Create (0.8ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 2 of List 2"], ["description", "Card2_2"], ["list_id", 6], ["created_at", "2020-06-24 19:11:43.812910"], ["updated_at", "2020-06-24 19:11:43.812910"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 3 of List 2"], ["description", "Card2_3"], ["list_id", 6], ["created_at", "2020-06-24 19:11:43.823961"], ["updated_at", "2020-06-24 19:11:43.823961"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4539074736204228780)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4539074736204228780)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]

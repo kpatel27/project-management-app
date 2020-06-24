@@ -3645,6 +3645,7 @@ Processing by Api::BoardsController#index as JSON
 Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 1197)
 
 
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2020-06-25 02:30:00 +0800
   [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by HomeController#index as HTML
@@ -3661,6 +3662,179 @@ Built at: 06/25/2020 2:30:23 AM
 js/application-995dc626d8a60b4a6ab3.js.map   1.97 MiB  application  [emitted] [dev]        application
                              manifest.json  364 bytes               [emitted]              
 Entrypoint application = js/application-995dc626d8a60b4a6ab3.js js/application-995dc626d8a60b4a6ab3.js.map
+=======
+Started GET "/" for ::1 at 2020-06-24 10:50:33 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 190)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1175ms (Views: 1168.7ms | ActiveRecord: 0.0ms | Allocations: 1766792)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-24 10:50:35 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (25.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 126.9ms | Allocations: 7817)
+Completed 200 OK in 134ms (Views: 11.3ms | ActiveRecord: 119.8ms | Allocations: 11543)
+
+
+Started GET "/boards/1" for ::1 at 2020-06-24 10:50:40 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/boards/1"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/boards/1" for ::1 at 2020-06-24 10:51:44 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/boards/1"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/boards/1" for ::1 at 2020-06-24 10:51:46 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/boards/1"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/boards/1" for ::1 at 2020-06-24 11:02:19 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/boards/1"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/boards/1" for ::1 at 2020-06-24 11:02:29 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"1"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 79)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 6f662a03b9474ca7ba60
+Version: webpack 4.43.0
+Time: 5166ms
+Built at: 2020-06-24 11:02:37 a.m.
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9bb84cfca82a563271b2.js    1.8 MiB  application  [emitted] [immutable]  application
+js/application-9bb84cfca82a563271b2.js.map   1.97 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9bb84cfca82a563271b2.js js/application-9bb84cfca82a563271b2.js.map
+>>>>>>> 9c66450684a54289d55f6d263203813bba3f8695
 [./app/javascript/actions/BoardActions.js] 1.35 KiB {application} [built]
 [./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
 [./app/javascript/channels/index.js] 211 bytes {application} [built]
@@ -3670,7 +3844,11 @@ Entrypoint application = js/application-995dc626d8a60b4a6ab3.js js/application-9
 [./app/javascript/lib/Store.js] 221 bytes {application} [built]
 [./app/javascript/packs/application.js] 1.89 KiB {application} [built]
 [./app/javascript/reducers/boards.js] 1.95 KiB {application} [built]
+<<<<<<< HEAD
 [./app/javascript/reducers/cards.js] 3.41 KiB {application} [built] [failed] [1 error]
+=======
+[./app/javascript/reducers/cards.js] 3.26 KiB {application} [built] [failed] [1 error]
+>>>>>>> 9c66450684a54289d55f6d263203813bba3f8695
 [./app/javascript/reducers/lists.js] 350 bytes {application} [built]
 [./app/javascript/reducers/rootReducer.js] 246 bytes {application} [built]
 [./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
@@ -3685,13 +3863,18 @@ ERROR in ./app/javascript/components/board/BoardContainer.js 16:60-65
 
 ERROR in ./app/javascript/reducers/cards.js
 Module build failed (from ./node_modules/babel-loader/lib/index.js):
+<<<<<<< HEAD
 SyntaxError: /home/edmondtam/LS/capstone/frameworks/project-management-app/app/javascript/reducers/cards.js: Unexpected token, expected ";" (1:44)
+=======
+SyntaxError: /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/app/javascript/reducers/cards.js: Unexpected token, expected ";" (1:44)
+>>>>>>> 9c66450684a54289d55f6d263203813bba3f8695
 
 > 1 | export default cards = (state = [], action) {
     |                                             ^
   2 |   switch (action.type) {
   3 |     case "FETCH_BOARD_SUCCESS":
   4 |       const { list } = action.board;
+<<<<<<< HEAD
     at Object._raise (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:754:17)
     at Object.raiseWithData (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:747:17)
     at Object.raise (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:741:17)
@@ -3717,10 +3900,38 @@ SyntaxError: /home/edmondtam/LS/capstone/frameworks/project-management-app/app/j
     at step (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/gensync/index.js:254:32)
     at /home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/gensync/index.js:266:13
     at async.call.result.err.err (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/gensync/index.js:216:11)
+=======
+    at Object._raise (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:754:17)
+    at Object.raiseWithData (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:747:17)
+    at Object.raise (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:741:17)
+    at Object.unexpected (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:8844:16)
+    at Object.semicolon (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:8826:40)
+    at Object.parseExportDefaultExpression (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:12396:12)
+    at Object.parseExport (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:12297:31)
+    at Object.parseStatementContent (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:11297:27)
+    at Object.parseStatement (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:11193:17)
+    at Object.parseBlockOrModuleBlockBody (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:11768:25)
+    at Object.parseBlockBody (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:11754:10)
+    at Object.parseTopLevel (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:11124:10)
+    at Object.parse (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:12826:10)
+    at parse (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:12879:38)
+    at parser (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/core/lib/parser/index.js:54:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)
+    at normalizeFile.next (<anonymous>)
+    at run (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/core/lib/transformation/index.js:31:50)
+    at run.next (<anonymous>)
+    at Function.transform (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/core/lib/transform.js:27:41)
+    at transform.next (<anonymous>)
+    at step (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/gensync/index.js:254:32)
+    at /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/gensync/index.js:266:13
+    at async.call.result.err.err (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/gensync/index.js:216:11)
+>>>>>>> 9c66450684a54289d55f6d263203813bba3f8695
  @ ./app/javascript/reducers/rootReducer.js 4:0-28 8:9-14
  @ ./app/javascript/lib/Store.js
  @ ./app/javascript/packs/application.js
 
+<<<<<<< HEAD
 Completed 200 OK in 22222ms (Views: 22197.4ms | ActiveRecord: 0.0ms | Allocations: 2422236)
 
 
@@ -3734,10 +3945,458 @@ Completed 200 OK in 1651ms (Views: 1643.0ms | ActiveRecord: 0.0ms | Allocations:
 
 
 Started GET "/" for 127.0.0.1 at 2020-06-25 02:31:19 +0800
+=======
+Completed 200 OK in 8041ms (Views: 8039.9ms | ActiveRecord: 0.0ms | Allocations: 1765106)
+
+
+Started GET "/boards/1" for ::1 at 2020-06-24 11:05:53 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"1"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms | Allocations: 8642)
+
+
+Started GET "/" for ::1 at 2020-06-24 11:06:11 -0700
+>>>>>>> 9c66450684a54289d55f6d263203813bba3f8695
 Processing by HomeController#index as HTML
   Rendering home/index.html.erb within layouts/application
   Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
 [Webpacker] Everything's up-to-date. Nothing to do
+<<<<<<< HEAD
 Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.0ms | Allocations: 8140)
+=======
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 8649)
+
+
+Started GET "/" for ::1 at 2020-06-24 11:07:05 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 8647)
+
+
+Started GET "/" for ::1 at 2020-06-24 11:07:13 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 882fdb8587e270715df8
+Version: webpack 4.43.0
+Time: 1912ms
+Built at: 2020-06-24 11:07:17 a.m.
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-0832a7bf558af77e89fe.js    1.8 MiB  application  [emitted] [immutable]  application
+js/application-0832a7bf558af77e89fe.js.map   1.97 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-0832a7bf558af77e89fe.js js/application-0832a7bf558af77e89fe.js.map
+[./app/javascript/actions/BoardActions.js] 1.35 KiB {application} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/constants/ActionTypes.js] 287 bytes {application} [built]
+[./app/javascript/constants/ApiRoutes.js] 89 bytes {application} [built]
+[./app/javascript/lib/ApiClient.js] 1.08 KiB {application} [built]
+[./app/javascript/lib/Store.js] 221 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.89 KiB {application} [built]
+[./app/javascript/reducers/boards.js] 1.95 KiB {application} [built]
+[./app/javascript/reducers/cards.js] 244 bytes {application} [built]
+[./app/javascript/reducers/lists.js] 350 bytes {application} [built]
+[./app/javascript/reducers/rootReducer.js] 246 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 99 hidden modules
+
+ERROR in ./app/javascript/components/board/BoardContainer.js 16:60-65
+"export 'default' (imported as 'Board') was not found in './Board'
+ @ ./app/javascript/components/Application.jsx
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 3785ms (Views: 3784.8ms | ActiveRecord: 0.0ms | Allocations: 10028)
+
+
+Started GET "/" for ::1 at 2020-06-24 11:07:30 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 3f0540573dd746e00f82
+Version: webpack 4.43.0
+Time: 2111ms
+Built at: 2020-06-24 11:07:34 a.m.
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-b3cdb25a03baf8a248de.js    1.8 MiB  application  [emitted] [immutable]  application
+js/application-b3cdb25a03baf8a248de.js.map   1.97 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-b3cdb25a03baf8a248de.js js/application-b3cdb25a03baf8a248de.js.map
+[./app/javascript/actions/BoardActions.js] 1.35 KiB {application} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/constants/ActionTypes.js] 287 bytes {application} [built]
+[./app/javascript/constants/ApiRoutes.js] 89 bytes {application} [built]
+[./app/javascript/lib/ApiClient.js] 1.08 KiB {application} [built]
+[./app/javascript/lib/Store.js] 221 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.89 KiB {application} [built]
+[./app/javascript/reducers/boards.js] 1.95 KiB {application} [built]
+[./app/javascript/reducers/cards.js] 365 bytes {application} [built]
+[./app/javascript/reducers/lists.js] 350 bytes {application} [built]
+[./app/javascript/reducers/rootReducer.js] 246 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 99 hidden modules
+
+ERROR in ./app/javascript/components/board/BoardContainer.js 16:60-65
+"export 'default' (imported as 'Board') was not found in './Board'
+ @ ./app/javascript/components/Application.jsx
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 4077ms (Views: 4076.6ms | ActiveRecord: 0.0ms | Allocations: 10027)
+
+
+Started GET "/" for ::1 at 2020-06-24 11:07:57 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 5538e660769dbcab5a6d
+Version: webpack 4.43.0
+Time: 1839ms
+Built at: 2020-06-24 11:08:00 a.m.
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-2f089233dabf14842169.js    1.8 MiB  application  [emitted] [immutable]  application
+js/application-2f089233dabf14842169.js.map   1.97 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-2f089233dabf14842169.js js/application-2f089233dabf14842169.js.map
+[./app/javascript/actions/BoardActions.js] 1.35 KiB {application} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/constants/ActionTypes.js] 287 bytes {application} [built]
+[./app/javascript/constants/ApiRoutes.js] 89 bytes {application} [built]
+[./app/javascript/lib/ApiClient.js] 1.08 KiB {application} [built]
+[./app/javascript/lib/Store.js] 221 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.89 KiB {application} [built]
+[./app/javascript/reducers/boards.js] 1.95 KiB {application} [built]
+[./app/javascript/reducers/cards.js] 392 bytes {application} [built]
+[./app/javascript/reducers/lists.js] 350 bytes {application} [built]
+[./app/javascript/reducers/rootReducer.js] 246 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 99 hidden modules
+
+ERROR in ./app/javascript/components/board/BoardContainer.js 16:60-65
+"export 'default' (imported as 'Board') was not found in './Board'
+ @ ./app/javascript/components/Application.jsx
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 3164ms (Views: 3162.4ms | ActiveRecord: 0.0ms | Allocations: 10026)
+
+
+Started GET "/" for ::1 at 2020-06-24 11:08:34 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2020-06-24 11:08:38 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 9d57d0446bd5872595c4
+Version: webpack 4.43.0
+Time: 2035ms
+Built at: 2020-06-24 11:08:38 a.m.
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-669bce061b512c8f1ef1.js    1.8 MiB  application  [emitted] [immutable]  application
+js/application-669bce061b512c8f1ef1.js.map   1.97 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-669bce061b512c8f1ef1.js js/application-669bce061b512c8f1ef1.js.map
+[./app/javascript/actions/BoardActions.js] 1.35 KiB {application} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/constants/ActionTypes.js] 287 bytes {application} [built]
+[./app/javascript/constants/ApiRoutes.js] 89 bytes {application} [built]
+[./app/javascript/lib/ApiClient.js] 1.08 KiB {application} [built]
+[./app/javascript/lib/Store.js] 221 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.89 KiB {application} [built]
+[./app/javascript/reducers/boards.js] 1.95 KiB {application} [built]
+[./app/javascript/reducers/cards.js] 404 bytes {application} [built]
+[./app/javascript/reducers/lists.js] 350 bytes {application} [built]
+[./app/javascript/reducers/rootReducer.js] 246 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 99 hidden modules
+
+ERROR in ./app/javascript/components/board/BoardContainer.js 16:60-65
+"export 'default' (imported as 'Board') was not found in './Board'
+ @ ./app/javascript/components/Application.jsx
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 3808ms (Views: 3805.1ms | ActiveRecord: 0.0ms | Allocations: 19519)
+
+
+Started GET "/" for ::1 at 2020-06-24 11:08:39 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.0ms | Allocations: 8645)
+
+
+[Webpacker] Compilation failed:
+Hash: 9d57d0446bd5872595c4
+Version: webpack 4.43.0
+Time: 2089ms
+Built at: 2020-06-24 11:08:41 a.m.
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-669bce061b512c8f1ef1.js    1.8 MiB  application  [emitted] [immutable]  application
+js/application-669bce061b512c8f1ef1.js.map   1.97 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-669bce061b512c8f1ef1.js js/application-669bce061b512c8f1ef1.js.map
+[./app/javascript/actions/BoardActions.js] 1.35 KiB {application} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/constants/ActionTypes.js] 287 bytes {application} [built]
+[./app/javascript/constants/ApiRoutes.js] 89 bytes {application} [built]
+[./app/javascript/lib/ApiClient.js] 1.08 KiB {application} [built]
+[./app/javascript/lib/Store.js] 221 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.89 KiB {application} [built]
+[./app/javascript/reducers/boards.js] 1.95 KiB {application} [built]
+[./app/javascript/reducers/cards.js] 404 bytes {application} [built]
+[./app/javascript/reducers/lists.js] 350 bytes {application} [built]
+[./app/javascript/reducers/rootReducer.js] 246 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 99 hidden modules
+
+ERROR in ./app/javascript/components/board/BoardContainer.js 16:60-65
+"export 'default' (imported as 'Board') was not found in './Board'
+ @ ./app/javascript/components/Application.jsx
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 3387ms (Views: 3384.7ms | ActiveRecord: 0.0ms | Allocations: 34722)
+
+
+Started GET "/" for ::1 at 2020-06-24 11:10:23 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 2ae71889a52db406d221
+Version: webpack 4.43.0
+Time: 2000ms
+Built at: 2020-06-24 11:10:27 a.m.
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-40c7690ec789926b277a.js    1.8 MiB  application  [emitted] [immutable]  application
+js/application-40c7690ec789926b277a.js.map   1.97 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-40c7690ec789926b277a.js js/application-40c7690ec789926b277a.js.map
+[./app/javascript/actions/BoardActions.js] 1.35 KiB {application} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/constants/ActionTypes.js] 287 bytes {application} [built]
+[./app/javascript/constants/ApiRoutes.js] 89 bytes {application} [built]
+[./app/javascript/lib/ApiClient.js] 1.08 KiB {application} [built]
+[./app/javascript/lib/Store.js] 221 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.89 KiB {application} [built]
+[./app/javascript/reducers/boards.js] 1.95 KiB {application} [built]
+[./app/javascript/reducers/cards.js] 404 bytes {application} [built]
+[./app/javascript/reducers/lists.js] 350 bytes {application} [built]
+[./app/javascript/reducers/rootReducer.js] 246 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 99 hidden modules
+
+ERROR in ./app/javascript/components/board/BoardContainer.js 16:35-40
+"export 'default' (imported as 'Board') was not found in './Board'
+ @ ./app/javascript/components/Application.jsx
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 4049ms (Views: 4048.1ms | ActiveRecord: 0.0ms | Allocations: 10026)
+
+
+Started GET "/" for ::1 at 2020-06-24 11:11:26 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 330f65e11b5e05f384e8
+Version: webpack 4.43.0
+Time: 1950ms
+Built at: 2020-06-24 11:11:30 a.m.
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-a6ef38be2cd62fc6636c.js    1.8 MiB  application  [emitted] [immutable]  application
+js/application-a6ef38be2cd62fc6636c.js.map   1.97 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-a6ef38be2cd62fc6636c.js js/application-a6ef38be2cd62fc6636c.js.map
+[./app/javascript/actions/BoardActions.js] 1.35 KiB {application} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/constants/ActionTypes.js] 287 bytes {application} [built]
+[./app/javascript/constants/ApiRoutes.js] 89 bytes {application} [built]
+[./app/javascript/lib/ApiClient.js] 1.08 KiB {application} [built]
+[./app/javascript/lib/Store.js] 221 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.89 KiB {application} [built]
+[./app/javascript/reducers/boards.js] 1.95 KiB {application} [built]
+[./app/javascript/reducers/cards.js] 404 bytes {application} [built]
+[./app/javascript/reducers/lists.js] 350 bytes {application} [built]
+[./app/javascript/reducers/rootReducer.js] 246 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 99 hidden modules
+
+ERROR in ./app/javascript/components/board/BoardContainer.js 17:15-20
+"export 'default' (imported as 'Board') was not found in './Board'
+ @ ./app/javascript/components/Application.jsx
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 3754ms (Views: 3753.8ms | ActiveRecord: 0.0ms | Allocations: 10031)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-24 11:11:30 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (74.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 143.5ms | Allocations: 5300)
+Completed 200 OK in 166ms (Views: 28.1ms | ActiveRecord: 125.9ms | Allocations: 9154)
+
+
+Started GET "/" for ::1 at 2020-06-24 11:12:34 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: a6196bb098762b8670fb
+Version: webpack 4.43.0
+Time: 2058ms
+Built at: 2020-06-24 11:12:38 a.m.
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-77a95a06ec4a9ee5bb15.js    1.8 MiB  application  [emitted] [immutable]  application
+js/application-77a95a06ec4a9ee5bb15.js.map   1.97 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-77a95a06ec4a9ee5bb15.js js/application-77a95a06ec4a9ee5bb15.js.map
+[./app/javascript/actions/BoardActions.js] 1.35 KiB {application} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/constants/ActionTypes.js] 287 bytes {application} [built]
+[./app/javascript/constants/ApiRoutes.js] 89 bytes {application} [built]
+[./app/javascript/lib/ApiClient.js] 1.08 KiB {application} [built]
+[./app/javascript/lib/Store.js] 221 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.89 KiB {application} [built]
+[./app/javascript/reducers/boards.js] 1.95 KiB {application} [built]
+[./app/javascript/reducers/cards.js] 404 bytes {application} [built]
+[./app/javascript/reducers/lists.js] 350 bytes {application} [built]
+[./app/javascript/reducers/rootReducer.js] 246 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 99 hidden modules
+
+ERROR in ./app/javascript/components/board/BoardContainer.js 16:49-54
+"export 'default' (imported as 'Board') was not found in './Board'
+ @ ./app/javascript/components/Application.jsx
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 3830ms (Views: 3829.5ms | ActiveRecord: 0.0ms | Allocations: 10026)
+
+
+Started GET "/" for ::1 at 2020-06-24 11:13:36 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3684ms (Views: 3683.3ms | ActiveRecord: 0.0ms | Allocations: 10102)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-24 11:13:40 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (2.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 7.2ms | Allocations: 2805)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 2.4ms | Allocations: 3491)
+
+
+Started GET "/boards/1" for ::1 at 2020-06-24 11:16:23 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"1"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4222ms (Views: 4220.8ms | ActiveRecord: 0.0ms | Allocations: 10102)
+
+
+Started GET "/api/boards/1" for ::1 at 2020-06-24 11:16:27 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (3.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (3.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 1]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  Rendered api/boards/show.json.jbuilder (Duration: 93.6ms | Allocations: 8454)
+Completed 200 OK in 162ms (Views: 54.5ms | ActiveRecord: 74.0ms | Allocations: 14521)
+
+
+Started GET "/boards/1" for ::1 at 2020-06-24 11:19:11 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"1"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3156ms (Views: 3155.4ms | ActiveRecord: 0.0ms | Allocations: 10093)
+
+
+Started GET "/api/boards/1" for ::1 at 2020-06-24 11:19:15 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (5.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 1]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  Rendered api/boards/show.json.jbuilder (Duration: 27.0ms | Allocations: 4144)
+Completed 200 OK in 31ms (Views: 22.8ms | ActiveRecord: 6.0ms | Allocations: 5296)
+
+
+Started GET "/boards/1" for ::1 at 2020-06-24 11:22:51 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"1"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3202ms (Views: 3201.9ms | ActiveRecord: 0.0ms | Allocations: 10100)
+
+
+Started GET "/api/boards/1" for ::1 at 2020-06-24 11:22:55 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (8.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 1]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  Rendered api/boards/show.json.jbuilder (Duration: 10.6ms | Allocations: 2756)
+Completed 200 OK in 13ms (Views: 2.5ms | ActiveRecord: 9.1ms | Allocations: 3801)
+>>>>>>> 9c66450684a54289d55f6d263203813bba3f8695
 
 

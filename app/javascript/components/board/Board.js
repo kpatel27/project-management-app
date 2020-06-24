@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export class Board extends Component {
+class Board extends Component {
+  componentDidMount() {
+    this.props.onFetchBoard();
+  }
+
   render() {
-    return (
-      <div>
-        {/* {this.props.lists}
-        {this.props.cards} */}
-        Hi there!
-      </div>
-    )
+    return <div>Hi</div>;
   }
 }
+
+export default Board;

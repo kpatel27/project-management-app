@@ -41,7 +41,6 @@ const apiClient = {
       .catch(logError);
   },
   createList: function(title, boardId, callback) {
-    console.log(title, boardId, callback);
     return axios
       .post(routes.CREATE_LIST_URL, {
         board_id: boardId,

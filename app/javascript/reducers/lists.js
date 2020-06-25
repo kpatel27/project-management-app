@@ -1,4 +1,4 @@
-import * as types from "../constants/ActionTypes";
+import * as types from '../constants/ActionTypes';
 
 export default function lists(state = [], action) {
   switch (action.type) {
@@ -8,7 +8,9 @@ export default function lists(state = [], action) {
     case types.CREATE_LIST_REQUEST:
       return state;
     case types.CREATE_LIST_SUCCESS:
-      return action.payload;
+      const newList = action.list;
+      console.log(action);
+      return state.concat(newList);
     default:
       return state;
   }

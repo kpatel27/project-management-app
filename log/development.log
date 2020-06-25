@@ -10177,3 +10177,22 @@ Can't verify CSRF token authenticity.
 Completed 201 Created in 13ms (Views: 1.3ms | ActiveRecord: 2.9ms | Allocations: 4543)
 
 
+Started POST "/api/lists" for 127.0.0.1 at 2020-06-26 06:43:13 +0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"board_id"=>5, "list"=>{"title"=>"!!!"}}
+Can't verify CSRF token authenticity.
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:3:in `create'
+  [1m[36mCACHE Board Load (0.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[36mList Create (0.5ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "!!!"], ["board_id", 5], ["created_at", "2020-06-25 22:43:13.953790"], ["updated_at", "2020-06-25 22:43:13.953790"]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  Rendering api/lists/create.json.jbuilder
+  Rendered api/lists/create.json.jbuilder (Duration: 0.3ms | Allocations: 104)
+Completed 201 Created in 11ms (Views: 1.0ms | ActiveRecord: 2.0ms | Allocations: 4540)
+
+

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ListListing from '../list-listing/ListListing';
+import ListListingContainer from '../list-listing/ListListingContainer';
 
 class Board extends Component {
   componentDidMount() {
@@ -7,11 +7,15 @@ class Board extends Component {
   }
 
   render() {
+    let title;
+    if (this.props.board) {
+      title = this.props.board.title;
+    }
     return (
       <>
         <header>
           <ul>
-            <li id='title'>My Title</li>
+            <li id='title'>{title}</li>
             <li className='star-icon icon'></li>
             <li className='private private-icon icon'>Private</li>
           </ul>
@@ -23,13 +27,15 @@ class Board extends Component {
           </div>
         </header>
         <main>
-          <ListListing />
-          <div id='new-list' className='new-list'>
-            <span>Add a list...</span>
-            <input type='text' placeholder='Add a list...' />
-            <div>
-              <input type='submit' className='button' value='Save' />
-              <i className='x-icon icon'></i>
+          <div id='list-container' className='list-container'>
+            <ListListingContainer />
+            <div id='new-list' className='new-list'>
+              <span>Add a list...</span>
+              <input type='text' placeholder='Add a list...' />
+              <div>
+                <input type='submit' className='button' value='Save' />
+                <i className='x-icon icon'></i>
+              </div>
             </div>
           </div>
         </main>

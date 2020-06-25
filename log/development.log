@@ -5188,3 +5188,3012 @@ puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
 Completed 200 OK in 53ms (Views: 12.3ms | ActiveRecord: 19.6ms | Allocations: 42843)
 
 
+Started GET "/boards/4" for ::1 at 2020-06-25 08:37:50 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 190)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 5799ms (Views: 5781.6ms | ActiveRecord: 0.0ms | Allocations: 1765902)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 08:37:57 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 08:37:57 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mBoard Load (8.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (8.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 108.3ms | Allocations: 19918)
+Completed 200 OK in 393ms (Views: 85.2ms | ActiveRecord: 271.6ms | Allocations: 86681)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 08:38:34 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3805ms (Views: 3804.5ms | ActiveRecord: 0.0ms | Allocations: 10145)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 08:38:39 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (3.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (1.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 12.6ms | Allocations: 3808)
+Completed 200 OK in 17ms (Views: 7.1ms | ActiveRecord: 7.2ms | Allocations: 4928)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 08:38:45 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3554ms (Views: 3553.4ms | ActiveRecord: 0.0ms | Allocations: 10115)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 08:38:49 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 08:38:49 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mList Load (20.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (11.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (2.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 92.2ms | Allocations: 53739)
+Completed 200 OK in 98ms (Views: 59.7ms | ActiveRecord: 35.7ms | Allocations: 55557)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 08:39:17 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3898ms (Views: 3897.0ms | ActiveRecord: 0.0ms | Allocations: 10124)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 08:39:21 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 08:39:21 -0700
+  [1m[36mList Load (2.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (36.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (2.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 56.1ms | Allocations: 31194)
+Completed 200 OK in 65ms (Views: 20.6ms | ActiveRecord: 41.7ms | Allocations: 33221)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 08:40:48 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4125ms (Views: 4124.5ms | ActiveRecord: 0.0ms | Allocations: 10122)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 08:40:52 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 08:40:52 -0700
+  [1m[36mList Load (3.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (32.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (3.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 54.4ms | Allocations: 33011)
+Completed 200 OK in 62ms (Views: 17.7ms | ActiveRecord: 40.1ms | Allocations: 34059)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 08:41:14 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4593ms (Views: 4590.9ms | ActiveRecord: 0.0ms | Allocations: 10123)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 08:41:19 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (4.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 08:41:19 -0700
+  [1m[36mCard Load (32.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (32.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 78.6ms | Allocations: 33468)
+Completed 200 OK in 88ms (Views: 14.0ms | ActiveRecord: 70.8ms | Allocations: 34476)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 08:41:32 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3965ms (Views: 3964.7ms | ActiveRecord: 0.0ms | Allocations: 10123)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 08:41:37 -0700
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 08:41:37 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mBoard Load (4.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (17.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (22.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (15.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 62.4ms | Allocations: 48231)
+Completed 200 OK in 69ms (Views: 8.0ms | ActiveRecord: 59.2ms | Allocations: 51016)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 08:42:55 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4048ms (Views: 4047.2ms | ActiveRecord: 0.0ms | Allocations: 10121)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 08:44:04 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4886ms (Views: 4885.5ms | ActiveRecord: 0.0ms | Allocations: 10121)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 08:44:46 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3622ms (Views: 3621.4ms | ActiveRecord: 0.0ms | Allocations: 10123)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 08:44:50 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 08:44:50 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mBoard Load (49.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (4.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 16.7ms | Allocations: 6994)
+Completed 200 OK in 75ms (Views: 12.4ms | ActiveRecord: 55.5ms | Allocations: 35343)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 08:47:03 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 5338ms (Views: 5337.6ms | ActiveRecord: 0.0ms | Allocations: 10121)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 08:48:09 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4549ms (Views: 4548.2ms | ActiveRecord: 0.0ms | Allocations: 10132)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 08:48:14 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 08:48:14 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mBoard Load (2.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (5.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (4.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 29.6ms | Allocations: 15937)
+Completed 200 OK in 66ms (Views: 21.3ms | ActiveRecord: 13.1ms | Allocations: 44893)
+
+
+Started GET "/ui" for ::1 at 2020-06-25 08:49:52 -0700
+Processing by UiController#index as HTML
+  Rendering ui/index.html.erb within layouts/static
+  Rendered ui/index.html.erb within layouts/static (Duration: 1.6ms | Allocations: 774)
+Completed 200 OK in 60ms (Views: 58.2ms | ActiveRecord: 0.0ms | Allocations: 14559)
+
+
+Started GET "/ui/single_board" for ::1 at 2020-06-25 08:49:59 -0700
+Processing by UiController#single_board as HTML
+  Rendering ui/single_board.html.erb within layouts/static
+  Rendered ui/single_board.html.erb within layouts/static (Duration: 0.9ms | Allocations: 334)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 11571)
+
+
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 08:49:59 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/boards/4" for ::1 at 2020-06-25 08:53:32 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4295ms (Views: 4294.6ms | ActiveRecord: 0.0ms | Allocations: 10128)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 08:53:36 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 08:53:36 -0700
+  [1m[36mList Load (4.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (48.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (1.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 70.5ms | Allocations: 32556)
+Completed 200 OK in 75ms (Views: 17.1ms | ActiveRecord: 55.7ms | Allocations: 33918)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 08:54:33 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4370ms (Views: 4368.6ms | ActiveRecord: 0.0ms | Allocations: 10129)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 08:54:38 -0700
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 08:54:38 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (6.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (3.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (10.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 53.4ms | Allocations: 18912)
+Completed 200 OK in 82ms (Views: 41.6ms | ActiveRecord: 27.4ms | Allocations: 31389)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 08:58:25 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4422ms (Views: 4421.8ms | ActiveRecord: 0.0ms | Allocations: 10141)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 08:58:29 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 08:58:29 -0700
+  [1m[36mList Load (2.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (26.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (53.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 93.6ms | Allocations: 43807)
+Completed 200 OK in 97ms (Views: 12.2ms | ActiveRecord: 82.8ms | Allocations: 44852)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:00:38 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4146ms (Views: 4145.5ms | ActiveRecord: 0.0ms | Allocations: 10148)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:00:43 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (1.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:00:43 -0700
+  [1m[36mList Load (4.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (7.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (2.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 51.1ms | Allocations: 30213)
+Completed 200 OK in 60ms (Views: 37.7ms | ActiveRecord: 16.4ms | Allocations: 32937)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:04:34 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3744ms (Views: 3742.5ms | ActiveRecord: 0.0ms | Allocations: 10143)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:05:33 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4196ms (Views: 4194.8ms | ActiveRecord: 0.0ms | Allocations: 10149)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:05:37 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:05:37 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mBoard Load (3.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (6.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (26.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (13.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 65.5ms | Allocations: 8565)
+Completed 200 OK in 118ms (Views: 22.6ms | ActiveRecord: 50.4ms | Allocations: 36066)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:08:51 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4184ms (Views: 4183.5ms | ActiveRecord: 0.0ms | Allocations: 10152)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:08:55 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:08:55 -0700
+  [1m[36mBoard Load (3.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mList Load (18.9ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (39.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (13.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 121.3ms | Allocations: 57405)
+Completed 200 OK in 136ms (Views: 51.7ms | ActiveRecord: 76.1ms | Allocations: 61654)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:09:19 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4333ms (Views: 4331.9ms | ActiveRecord: 0.0ms | Allocations: 10152)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:09:24 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (1.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:09:24 -0700
+  [1m[36mList Load (2.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 41.3ms | Allocations: 32120)
+Completed 200 OK in 49ms (Views: 38.8ms | ActiveRecord: 6.7ms | Allocations: 33451)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:09:37 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3832ms (Views: 3831.6ms | ActiveRecord: 0.0ms | Allocations: 10148)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:09:41 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:09:41 -0700
+  [1m[36mList Load (1.9ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (3.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 34.3ms | Allocations: 32837)
+Completed 200 OK in 37ms (Views: 29.6ms | ActiveRecord: 6.2ms | Allocations: 34338)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:12:43 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4606ms (Views: 4605.3ms | ActiveRecord: 0.0ms | Allocations: 10147)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:12:48 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:12:48 -0700
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  Rendered api/boards/show.json.jbuilder (Duration: 9.3ms | Allocations: 6752)
+Completed 200 OK in 31ms (Views: 27.4ms | ActiveRecord: 2.2ms | Allocations: 31872)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:13:29 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 5747ms (Views: 5746.5ms | ActiveRecord: 0.0ms | Allocations: 10146)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:13:35 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.0ms | Allocations: 8663)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:13:35 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:13:35 -0700
+  [1m[36mList Load (2.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 57.3ms | Allocations: 32905)
+Completed 200 OK in 64ms (Views: 57.1ms | ActiveRecord: 4.1ms | Allocations: 34048)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:13:39 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.0ms | Allocations: 8669)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:13:40 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:13:40 -0700
+  [1m[36mList Load (1.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (3.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (1.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 34.0ms | Allocations: 31112)
+Completed 200 OK in 40ms (Views: 28.3ms | ActiveRecord: 7.7ms | Allocations: 32153)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:13:45 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 8670)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:13:46 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:13:46 -0700
+  [1m[36mList Load (2.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (5.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 77.2ms | Allocations: 53401)
+Completed 200 OK in 83ms (Views: 72.1ms | ActiveRecord: 9.4ms | Allocations: 55011)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:14:04 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 190)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1507ms (Views: 1502.0ms | ActiveRecord: 0.0ms | Allocations: 1764418)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:14:06 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:14:06 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 114.6ms | Allocations: 27691)
+Completed 200 OK in 273ms (Views: 89.3ms | ActiveRecord: 137.0ms | Allocations: 86113)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:14:28 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4216ms (Views: 4214.0ms | ActiveRecord: 0.0ms | Allocations: 10200)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:14:33 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:14:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mBoard Load (13.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (37.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (2.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 98.8ms | Allocations: 27503)
+Completed 200 OK in 125ms (Views: 59.4ms | ActiveRecord: 55.7ms | Allocations: 56433)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:14:45 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3052ms (Views: 3051.7ms | ActiveRecord: 0.0ms | Allocations: 10150)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:14:48 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:14:48 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mBoard Load (4.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (30.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (30.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (2.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 103.5ms | Allocations: 33983)
+Completed 200 OK in 164ms (Views: 43.1ms | ActiveRecord: 68.2ms | Allocations: 61645)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:15:11 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4233ms (Views: 4231.9ms | ActiveRecord: 0.0ms | Allocations: 10146)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:15:16 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:15:16 -0700
+  [1m[36mBoard Load (3.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mList Load (158.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (42.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 226.9ms | Allocations: 33814)
+Completed 200 OK in 234ms (Views: 26.1ms | ActiveRecord: 204.5ms | Allocations: 36691)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:16:49 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4349ms (Views: 4348.8ms | ActiveRecord: 0.0ms | Allocations: 10144)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:16:54 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (1.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:16:54 -0700
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mList Load (1.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (8.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 41.1ms | Allocations: 33535)
+Completed 200 OK in 47ms (Views: 30.7ms | ActiveRecord: 13.1ms | Allocations: 35934)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:18:16 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3931ms (Views: 3930.7ms | ActiveRecord: 0.0ms | Allocations: 10151)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:18:20 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:18:20 -0700
+  [1m[36mList Load (3.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (2.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 30.0ms | Allocations: 32931)
+Completed 200 OK in 34ms (Views: 24.3ms | ActiveRecord: 7.4ms | Allocations: 34220)
+
+
+Started GET "/" for ::1 at 2020-06-25 09:19:29 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 8670)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-25 09:19:29 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (2.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 5.9ms | Allocations: 1832)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 2.8ms | Allocations: 3054)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:19:32 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:19:32 -0700
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (3.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (9.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 40.8ms | Allocations: 32582)
+Completed 200 OK in 43ms (Views: 29.1ms | ActiveRecord: 13.1ms | Allocations: 34028)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:20:08 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3847ms (Views: 3846.3ms | ActiveRecord: 0.0ms | Allocations: 10146)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:20:13 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:20:13 -0700
+  [1m[36mList Load (6.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (18.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 38.6ms | Allocations: 31676)
+Completed 200 OK in 44ms (Views: 16.5ms | ActiveRecord: 26.4ms | Allocations: 33467)
+
+
+Started GET "/" for ::1 at 2020-06-25 09:20:17 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 8668)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-25 09:20:17 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (1.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 3.2ms | Allocations: 1945)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.1ms | Allocations: 2407)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:20:21 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:20:21 -0700
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mList Load (0.9ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (5.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 42.9ms | Allocations: 43179)
+Completed 200 OK in 57ms (Views: 46.2ms | ActiveRecord: 8.0ms | Allocations: 50105)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:22:29 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3754ms (Views: 3753.9ms | ActiveRecord: 0.0ms | Allocations: 10145)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:22:33 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:22:33 -0700
+  [1m[36mList Load (6.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (3.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 38.8ms | Allocations: 33475)
+Completed 200 OK in 42ms (Views: 28.3ms | ActiveRecord: 11.8ms | Allocations: 34538)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:23:19 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4694ms (Views: 4693.8ms | ActiveRecord: 0.0ms | Allocations: 10145)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:23:24 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:23:24 -0700
+  [1m[36mList Load (1.9ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (7.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 39.0ms | Allocations: 34921)
+Completed 200 OK in 42ms (Views: 29.8ms | ActiveRecord: 10.9ms | Allocations: 36524)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:23:54 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4182ms (Views: 4181.6ms | ActiveRecord: 0.0ms | Allocations: 10153)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:23:58 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (1.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:23:58 -0700
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 41.0ms | Allocations: 31769)
+Completed 200 OK in 47ms (Views: 39.3ms | ActiveRecord: 4.3ms | Allocations: 34157)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:24:59 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3652ms (Views: 3651.2ms | ActiveRecord: 0.0ms | Allocations: 10143)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:25:03 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:25:03 -0700
+  [1m[36mBoard Load (3.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (35.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (169.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 213.2ms | Allocations: 31652)
+Completed 200 OK in 222ms (Views: 10.8ms | ActiveRecord: 208.0ms | Allocations: 34524)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:27:15 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 8666)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:27:15 -0700
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:27:15 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (4.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mList Load (20.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (18.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (3.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 89.0ms | Allocations: 55986)
+Completed 200 OK in 99ms (Views: 48.9ms | ActiveRecord: 45.7ms | Allocations: 58967)
+
+
+Started GET "/ui" for ::1 at 2020-06-25 09:33:04 -0700
+Processing by UiController#index as HTML
+  Rendering ui/index.html.erb within layouts/static
+  Rendered ui/index.html.erb within layouts/static (Duration: 1.0ms | Allocations: 774)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.0ms | Allocations: 13054)
+
+
+Started GET "/ui/card" for ::1 at 2020-06-25 09:33:09 -0700
+Processing by UiController#card as HTML
+  Rendering ui/card.html.erb within layouts/static
+  Rendered ui/card.html.erb within layouts/static (Duration: 0.6ms | Allocations: 251)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 11445)
+
+
+Started GET "/ui" for ::1 at 2020-06-25 09:33:13 -0700
+Processing by UiController#index as HTML
+  Rendering ui/index.html.erb within layouts/static
+  Rendered ui/index.html.erb within layouts/static (Duration: 0.4ms | Allocations: 554)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 11641)
+
+
+Started GET "/ui/card" for ::1 at 2020-06-25 09:35:25 -0700
+Processing by UiController#card as HTML
+  Rendering ui/card.html.erb within layouts/static
+  Rendered ui/card.html.erb within layouts/static (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 11092)
+
+
+Started GET "/ui" for ::1 at 2020-06-25 09:35:28 -0700
+Processing by UiController#index as HTML
+  Rendering ui/index.html.erb within layouts/static
+  Rendered ui/index.html.erb within layouts/static (Duration: 0.4ms | Allocations: 553)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 11635)
+
+
+Started GET "/ui/create_board" for ::1 at 2020-06-25 09:35:32 -0700
+Processing by UiController#create_board as HTML
+  Rendering ui/create_board.html.erb within layouts/static
+  Rendered ui/create_board.html.erb within layouts/static (Duration: 0.5ms | Allocations: 111)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 11311)
+
+
+Started GET "/ui" for ::1 at 2020-06-25 09:35:33 -0700
+Processing by UiController#index as HTML
+  Rendering ui/index.html.erb within layouts/static
+  Rendered ui/index.html.erb within layouts/static (Duration: 0.4ms | Allocations: 554)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 11641)
+
+
+Started GET "/ui/single_board" for ::1 at 2020-06-25 09:35:35 -0700
+Processing by UiController#single_board as HTML
+  Rendering ui/single_board.html.erb within layouts/static
+  Rendered ui/single_board.html.erb within layouts/static (Duration: 0.8ms | Allocations: 334)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 11527)
+
+
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:35:35 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/boards/4" for ::1 at 2020-06-25 09:42:52 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4626ms (Views: 4622.5ms | ActiveRecord: 0.0ms | Allocations: 10184)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:42:57 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:42:57 -0700
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (98.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (25.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 150.7ms | Allocations: 33228)
+Completed 200 OK in 188ms (Views: 26.9ms | ActiveRecord: 127.2ms | Allocations: 61844)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:44:04 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4088ms (Views: 4087.6ms | ActiveRecord: 0.0ms | Allocations: 10174)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:44:09 -0700
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:44:09 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (1.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (3.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 39.4ms | Allocations: 7748)
+Completed 200 OK in 169ms (Views: 34.8ms | ActiveRecord: 124.2ms | Allocations: 32950)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:44:29 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4063ms (Views: 4062.0ms | ActiveRecord: 0.0ms | Allocations: 10191)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:44:33 -0700
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:44:33 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mBoard Load (24.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (30.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (46.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 85.0ms | Allocations: 31504)
+Completed 200 OK in 118ms (Views: 8.1ms | ActiveRecord: 103.3ms | Allocations: 59578)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:45:26 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4182ms (Views: 4181.2ms | ActiveRecord: 0.0ms | Allocations: 10176)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:45:31 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:45:31 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mBoard Load (77.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (8.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (35.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 74.0ms | Allocations: 6738)
+Completed 200 OK in 236ms (Views: 32.0ms | ActiveRecord: 139.5ms | Allocations: 62062)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:48:40 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 10a8b9e1bd8060a0ddd8
+Version: webpack 4.43.0
+Time: 3402ms
+Built at: 2020-06-25 9:48:45 a.m.
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-f4536c12a14880491bbc.js   1.83 MiB  application  [emitted] [immutable]  application
+js/application-f4536c12a14880491bbc.js.map   1.98 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-f4536c12a14880491bbc.js js/application-f4536c12a14880491bbc.js.map
+[./app/javascript/actions/BoardActions.js] 1.35 KiB {application} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/constants/ActionTypes.js] 287 bytes {application} [built]
+[./app/javascript/constants/ApiRoutes.js] 89 bytes {application} [built]
+[./app/javascript/lib/ApiClient.js] 1.06 KiB {application} [built]
+[./app/javascript/lib/Store.js] 327 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.89 KiB {application} [built]
+[./app/javascript/reducers/boards.js] 1.79 KiB {application} [built]
+[./app/javascript/reducers/cards.js] 404 bytes {application} [built]
+[./app/javascript/reducers/lists.js] 341 bytes {application} [built]
+[./app/javascript/reducers/rootReducer.js] 246 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 101 hidden modules
+
+ERROR in ./app/javascript/components/list-listing/ListListing.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/app/javascript/components/list-listing/ListListing.js: Only one default export allowed per module. (16:0)
+
+  14 | }
+  15 | 
+> 16 | export default ListListing;
+     | ^
+  17 | 
+    at Object._raise (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:754:17)
+    at Object.raiseWithData (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:747:17)
+    at Object.raise (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:741:17)
+    at Object.checkDuplicateExports (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:12549:12)
+    at Object.checkExport (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:12474:14)
+    at Object.parseExport (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:12298:12)
+    at Object.parseStatementContent (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:11297:27)
+    at Object.parseStatement (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:11193:17)
+    at Object.parseBlockOrModuleBlockBody (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:11768:25)
+    at Object.parseBlockBody (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:11754:10)
+    at Object.parseTopLevel (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:11124:10)
+    at Object.parse (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:12826:10)
+    at parse (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/parser/lib/index.js:12879:38)
+    at parser (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/core/lib/parser/index.js:54:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)
+    at normalizeFile.next (<anonymous>)
+    at run (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/core/lib/transformation/index.js:31:50)
+    at run.next (<anonymous>)
+    at Function.transform (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/core/lib/transform.js:27:41)
+    at transform.next (<anonymous>)
+    at step (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/gensync/index.js:254:32)
+    at /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/gensync/index.js:266:13
+    at async.call.result.err.err (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/gensync/index.js:216:11)
+    at /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/gensync/index.js:184:28
+    at /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/@babel/core/lib/gensync-utils/async.js:72:7
+    at /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/gensync/index.js:108:33
+    at step (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/gensync/index.js:280:14)
+    at /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/gensync/index.js:266:13
+    at async.call.result.err.err (/Users/jeremy/Dev/capstone/trello/reaction_boilerplate/node_modules/gensync/index.js:216:11)
+ @ ./app/javascript/components/list-listing/ListListingContainer.js 2:0-40 11:46-57
+ @ ./app/javascript/components/board/Board.js
+ @ ./app/javascript/components/board/BoardContainer.js
+ @ ./app/javascript/components/Application.jsx
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 5965ms (Views: 5964.5ms | ActiveRecord: 0.0ms | Allocations: 10102)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:49:02 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4167ms (Views: 4166.6ms | ActiveRecord: 0.0ms | Allocations: 10175)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:49:06 -0700
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:49:06 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mBoard Load (2.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (2.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (1.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 14.8ms | Allocations: 7463)
+Completed 200 OK in 39ms (Views: 12.1ms | ActiveRecord: 6.3ms | Allocations: 34186)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:49:16 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4537ms (Views: 4535.9ms | ActiveRecord: 0.0ms | Allocations: 10170)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:49:21 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:49:21 -0700
+  [1m[36mList Load (3.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mCard Load (35.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (8.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 70.2ms | Allocations: 33413)
+Completed 200 OK in 73ms (Views: 23.1ms | ActiveRecord: 48.1ms | Allocations: 34451)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:49:36 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4300ms (Views: 4299.5ms | ActiveRecord: 0.0ms | Allocations: 10174)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:49:40 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+Started GET "/images/admin-badge.png" for ::1 at 2020-06-25 09:49:40 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/images/admin-badge.png"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mBoard Load (47.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (2.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (30.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 49.7ms | Allocations: 6913)
+Completed 200 OK in 124ms (Views: 22.3ms | ActiveRecord: 91.5ms | Allocations: 36596)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 09:51:14 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1129ms (Views: 1124.7ms | ActiveRecord: 0.0ms | Allocations: 711977)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 09:51:16 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (2.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 17.4ms | Allocations: 6004)
+Completed 200 OK in 21ms (Views: 14.8ms | ActiveRecord: 4.3ms | Allocations: 7722)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 10:00:22 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3980ms (Views: 3974.8ms | ActiveRecord: 0.0ms | Allocations: 10348)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 10:00:27 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (21.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (31.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 68.6ms | Allocations: 4920)
+Completed 200 OK in 102ms (Views: 36.0ms | ActiveRecord: 57.5ms | Allocations: 9060)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 10:04:35 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 5863ms (Views: 5860.1ms | ActiveRecord: 0.0ms | Allocations: 10302)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 10:04:58 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3877ms (Views: 3876.7ms | ActiveRecord: 0.0ms | Allocations: 10325)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 10:05:02 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (1.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (4.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (14.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (3.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 30.1ms | Allocations: 5943)
+Completed 200 OK in 36ms (Views: 9.0ms | ActiveRecord: 23.4ms | Allocations: 9239)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 10:06:45 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3693ms (Views: 3692.5ms | ActiveRecord: 0.0ms | Allocations: 10291)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 10:06:49 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (3.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (45.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 69.5ms | Allocations: 5362)
+Completed 200 OK in 87ms (Views: 27.7ms | ActiveRecord: 50.8ms | Allocations: 9369)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 10:09:43 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4515ms (Views: 4511.8ms | ActiveRecord: 0.0ms | Allocations: 10323)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 10:09:48 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (1.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (7.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (15.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 32.0ms | Allocations: 6725)
+Completed 200 OK in 37ms (Views: 9.5ms | ActiveRecord: 25.0ms | Allocations: 8918)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 10:10:58 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 2941ms (Views: 2940.3ms | ActiveRecord: 0.0ms | Allocations: 10318)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 10:11:01 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (1.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 22.6ms | Allocations: 4894)
+Completed 200 OK in 34ms (Views: 20.8ms | ActiveRecord: 5.5ms | Allocations: 8902)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 10:11:39 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 4420ms (Views: 4419.4ms | ActiveRecord: 0.0ms | Allocations: 10326)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 10:11:44 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 11.2ms | Allocations: 5850)
+Completed 200 OK in 18ms (Views: 12.5ms | ActiveRecord: 3.2ms | Allocations: 6933)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 10:12:58 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3760ms (Views: 3759.6ms | ActiveRecord: 0.0ms | Allocations: 10325)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 10:13:02 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 10.3ms | Allocations: 5893)
+Completed 200 OK in 13ms (Views: 7.5ms | ActiveRecord: 4.0ms | Allocations: 6991)
+
+
+Started GET "/boards/4" for ::1 at 2020-06-25 10:14:27 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jeremy/Dev/capstone/trello/reaction_boilerplate/public/packs
+Completed 200 OK in 3255ms (Views: 3253.7ms | ActiveRecord: 0.0ms | Allocations: 10319)
+
+
+Started GET "/api/boards/4" for ::1 at 2020-06-25 10:14:31 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 4]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (14.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 3]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 26.4ms | Allocations: 5840)
+Completed 200 OK in 31ms (Views: 12.4ms | ActiveRecord: 16.8ms | Allocations: 7935)
+
+

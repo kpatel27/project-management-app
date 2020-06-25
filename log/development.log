@@ -9876,3 +9876,304 @@ Can't verify CSRF token authenticity.
 Completed 201 Created in 8ms (Views: 0.4ms | ActiveRecord: 1.8ms | Allocations: 4436)
 
 
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 06:24:14 +0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 189)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 5790ms (Views: 5779.6ms | ActiveRecord: 0.0ms | Allocations: 1705827)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 06:24:20 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 7]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 8]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 108.2ms | Allocations: 21819)
+Completed 200 OK in 154ms (Views: 96.7ms | ActiveRecord: 28.8ms | Allocations: 28561)
+
+
+Started POST "/api/lists" for 127.0.0.1 at 2020-06-26 06:24:25 +0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"board_id"=>5, "list"=>{"title"=>"cdsfc"}}
+Can't verify CSRF token authenticity.
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:3:in `create'
+  [1m[36mCACHE Board Load (0.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[36mList Create (0.9ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "cdsfc"], ["board_id", 5], ["created_at", "2020-06-25 22:24:25.023935"], ["updated_at", "2020-06-25 22:24:25.023935"]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  Rendering api/lists/create.json.jbuilder
+  Rendered api/lists/create.json.jbuilder (Duration: 1.4ms | Allocations: 82)
+Completed 201 Created in 27ms (Views: 3.7ms | ActiveRecord: 2.5ms | Allocations: 5581)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 06:31:28 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 4271ms (Views: 4269.7ms | ActiveRecord: 0.0ms | Allocations: 10044)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 06:31:33 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (3.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 7]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 8]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 9]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 28.6ms | Allocations: 6799)
+Completed 200 OK in 36ms (Views: 24.6ms | ActiveRecord: 6.6ms | Allocations: 7888)
+
+
+Started POST "/api/lists" for 127.0.0.1 at 2020-06-26 06:31:36 +0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"board_id"=>5, "list"=>{"title"=>"sdf"}}
+Can't verify CSRF token authenticity.
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:3:in `create'
+  [1m[36mCACHE Board Load (0.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[36mList Create (1.4ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "sdf"], ["board_id", 5], ["created_at", "2020-06-25 22:31:36.962436"], ["updated_at", "2020-06-25 22:31:36.962436"]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  Rendering api/lists/create.json.jbuilder
+  Rendered api/lists/create.json.jbuilder (Duration: 0.2ms | Allocations: 22)
+Completed 201 Created in 24ms (Views: 2.7ms | ActiveRecord: 3.8ms | Allocations: 4472)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 06:34:36 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 5521ms (Views: 5520.3ms | ActiveRecord: 0.0ms | Allocations: 10044)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 06:34:43 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 7]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 8]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 9]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 10]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 21.1ms | Allocations: 7711)
+Completed 200 OK in 32ms (Views: 19.2ms | ActiveRecord: 3.8ms | Allocations: 8715)
+
+
+Started POST "/api/lists" for 127.0.0.1 at 2020-06-26 06:35:04 +0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"board_id"=>5, "list"=>{"title"=>"cdfc"}}
+Can't verify CSRF token authenticity.
+  [1m[36mBoard Load (8.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:3:in `create'
+  [1m[36mCACHE Board Load (0.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[36mList Create (0.5ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "cdfc"], ["board_id", 5], ["created_at", "2020-06-25 22:35:04.315542"], ["updated_at", "2020-06-25 22:35:04.315542"]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  Rendering api/lists/create.json.jbuilder
+  Rendered api/lists/create.json.jbuilder (Duration: 0.3ms | Allocations: 21)
+Completed 201 Created in 25ms (Views: 2.5ms | ActiveRecord: 11.2ms | Allocations: 4452)
+
+
+Started POST "/api/lists" for ::1 at 2020-06-26 06:36:59 +0800
+Processing by Api::ListsController#create as */*
+  Parameters: {"title"=>"Hello", "quantity"=>5, "price"=>3.25, "list"=>{"title"=>"Hello"}}
+Can't verify CSRF token authenticity.
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 570)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board without an ID):
+  
+app/controllers/api/lists_controller.rb:3:in `create'
+Started POST "/api/lists?title=Hi" for ::1 at 2020-06-26 06:39:19 +0800
+Processing by Api::ListsController#create as */*
+  Parameters: {"title"=>"Hi", "quantity"=>5, "price"=>3.25, "list"=>{"title"=>"Hi"}}
+Can't verify CSRF token authenticity.
+Completed 404 Not Found in 22ms (ActiveRecord: 17.7ms | Allocations: 1593)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board without an ID):
+  
+app/controllers/api/lists_controller.rb:3:in `create'
+Started POST "/api/lists?list=%7B%20title:%20%22hi%22%7D&board_id=5" for ::1 at 2020-06-26 06:39:48 +0800
+Processing by Api::ListsController#create as */*
+  Parameters: {"title"=>"Hello", "quantity"=>5, "price"=>3.25, "list"=>"{ title: \"hi\"}", "board_id"=>"5"}
+Can't verify CSRF token authenticity.
+  [1m[36mBoard Load (0.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.7ms | Allocations: 4413)
+
+
+  
+NoMethodError (undefined method `permit' for "{ title: \"hi\"}":String):
+  
+app/controllers/api/lists_controller.rb:21:in `list_params'
+app/controllers/api/lists_controller.rb:4:in `create'
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 06:40:26 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 71)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.0ms | Allocations: 9306)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 06:40:27 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 7]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 8]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 9]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 10]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 61.8ms | Allocations: 21311)
+Completed 200 OK in 69ms (Views: 53.5ms | ActiveRecord: 12.4ms | Allocations: 23542)
+
+
+Started POST "/api/lists" for 127.0.0.1 at 2020-06-26 06:40:32 +0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"board_id"=>5, "list"=>{"title"=>"b32b"}}
+Can't verify CSRF token authenticity.
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:3:in `create'
+  [1m[36mCACHE Board Load (0.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[36mList Create (2.1ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "b32b"], ["board_id", 5], ["created_at", "2020-06-25 22:40:32.405286"], ["updated_at", "2020-06-25 22:40:32.405286"]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  Rendering api/lists/create.json.jbuilder
+  Rendered api/lists/create.json.jbuilder (Duration: 0.5ms | Allocations: 162)
+Completed 201 Created in 15ms (Views: 1.9ms | ActiveRecord: 3.6ms | Allocations: 5457)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 06:41:01 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 4232ms (Views: 4230.0ms | ActiveRecord: 0.0ms | Allocations: 10044)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 06:41:06 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 7]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 8]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 9]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 10]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 34.5ms | Allocations: 9699)
+Completed 200 OK in 40ms (Views: 34.0ms | ActiveRecord: 3.6ms | Allocations: 10702)
+
+
+Started POST "/api/lists" for 127.0.0.1 at 2020-06-26 06:41:10 +0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"board_id"=>5, "list"=>{"title"=>"csdcfdsc3"}}
+Can't verify CSRF token authenticity.
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:3:in `create'
+  [1m[36mCACHE Board Load (0.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[36mList Create (0.6ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "csdcfdsc3"], ["board_id", 5], ["created_at", "2020-06-25 22:41:10.130399"], ["updated_at", "2020-06-25 22:41:10.130399"]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  Rendering api/lists/create.json.jbuilder
+  Rendered api/lists/create.json.jbuilder (Duration: 0.4ms | Allocations: 104)
+Completed 201 Created in 13ms (Views: 1.3ms | ActiveRecord: 2.9ms | Allocations: 4543)
+
+

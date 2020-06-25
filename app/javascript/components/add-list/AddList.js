@@ -7,6 +7,7 @@ export default class AddList extends Component {
   };
 
   openForm = () => {
+    if (this.state.isFormOpen) return;
     this.setState({ isFormOpen: true }, () =>
       document.getElementById("new-list-title").focus()
     );
@@ -24,7 +25,9 @@ export default class AddList extends Component {
     e.preventDefault();
     this.props.addList(this.state.title, () => {
       this.closeForm();
-      this.setState({ title: "" });
+      this.setState({ title: "" }, () => {
+        document.getElementById("new-list-title").value = "";
+      });
     });
   };
 

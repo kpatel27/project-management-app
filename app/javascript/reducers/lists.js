@@ -9,7 +9,6 @@ export default function lists(state = [], action) {
       return state;
     case types.CREATE_LIST_SUCCESS:
       const newList = action.list;
-      console.log(state, action);
       return state.concat(newList);
     default:
       return state;

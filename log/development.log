@@ -8197,3 +8197,926 @@ Processing by Api::BoardsController#show as JSON
 Completed 200 OK in 31ms (Views: 12.4ms | ActiveRecord: 16.8ms | Allocations: 7935)
 
 
+Started GET "/" for 127.0.0.1 at 2020-06-26 02:19:14 +0800
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 189)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 14757ms (Views: 14744.2ms | ActiveRecord: 0.0ms | Allocations: 2410983)
+
+
+Started GET "/api/boards" for 127.0.0.1 at 2020-06-26 02:19:30 +0800
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (9.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 34.9ms | Allocations: 8328)
+Completed 200 OK in 80ms (Views: 38.8ms | ActiveRecord: 26.1ms | Allocations: 13280)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 02:19:33 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (2.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 128.6ms | Allocations: 19870)
+Completed 200 OK in 135ms (Views: 112.9ms | ActiveRecord: 17.9ms | Allocations: 21473)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 02:43:50 +0800
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 189)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 13283ms (Views: 13267.6ms | ActiveRecord: 0.0ms | Allocations: 1705768)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 02:44:05 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (1.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 156.5ms | Allocations: 19825)
+Completed 200 OK in 249ms (Views: 161.4ms | ActiveRecord: 40.4ms | Allocations: 26547)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 02:44:27 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 8754ms (Views: 8752.9ms | ActiveRecord: 0.0ms | Allocations: 10266)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 02:44:37 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (2.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 58.6ms | Allocations: 3736)
+Completed 200 OK in 66ms (Views: 58.2ms | ActiveRecord: 4.0ms | Allocations: 4748)
+
+
+Started GET "/ui" for 127.0.0.1 at 2020-06-26 02:45:39 +0800
+Processing by UiController#index as HTML
+  Rendering ui/index.html.erb within layouts/static
+  Rendered ui/index.html.erb within layouts/static (Duration: 2.2ms | Allocations: 783)
+Completed 200 OK in 145ms (Views: 143.0ms | ActiveRecord: 0.0ms | Allocations: 18035)
+
+
+Started GET "/ui/single_board" for 127.0.0.1 at 2020-06-26 02:45:52 +0800
+Processing by UiController#single_board as HTML
+  Rendering ui/single_board.html.erb within layouts/static
+  Rendered ui/single_board.html.erb within layouts/static (Duration: 2.1ms | Allocations: 335)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.0ms | Allocations: 11616)
+
+
+Started GET "/ui/single_board" for 127.0.0.1 at 2020-06-26 02:49:33 +0800
+Processing by UiController#single_board as HTML
+  Rendering ui/single_board.html.erb within layouts/static
+  Rendered ui/single_board.html.erb within layouts/static (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms | Allocations: 11128)
+
+
+Started GET "/ui/labels_popover" for 127.0.0.1 at 2020-06-26 02:49:47 +0800
+Processing by UiController#labels_popover as HTML
+  Rendering ui/labels_popover.html.erb within layouts/static
+  Rendered ui/labels_popover.html.erb within layouts/static (Duration: 2.1ms | Allocations: 127)
+Completed 200 OK in 30ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 11364)
+
+
+Started GET "/ui/card_editing_description" for 127.0.0.1 at 2020-06-26 02:49:51 +0800
+Processing by UiController#card_editing_description as HTML
+  Rendering ui/card_editing_description.html.erb within layouts/static
+  Rendered ui/card_editing_description.html.erb within layouts/static (Duration: 0.8ms | Allocations: 253)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 11494)
+
+
+Started GET "/ui/single_board" for 127.0.0.1 at 2020-06-26 02:50:05 +0800
+Processing by UiController#single_board as HTML
+  Rendering ui/single_board.html.erb within layouts/static
+  Rendered ui/single_board.html.erb within layouts/static (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 11128)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 03:06:10 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 10837ms (Views: 10835.1ms | ActiveRecord: 0.0ms | Allocations: 10038)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 03:06:23 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.9ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (3.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 51.3ms | Allocations: 3807)
+Completed 200 OK in 69ms (Views: 51.2ms | ActiveRecord: 10.4ms | Allocations: 4899)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 03:07:57 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 7618ms (Views: 7616.6ms | ActiveRecord: 0.0ms | Allocations: 10029)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 03:08:06 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 44.3ms | Allocations: 3807)
+Completed 200 OK in 58ms (Views: 47.9ms | ActiveRecord: 3.8ms | Allocations: 4899)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 03:27:21 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 4206ms (Views: 4203.4ms | ActiveRecord: 0.0ms | Allocations: 10013)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 03:28:10 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 5049ms (Views: 5047.9ms | ActiveRecord: 0.0ms | Allocations: 10017)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 03:28:16 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 10.4ms | Allocations: 3807)
+Completed 200 OK in 21ms (Views: 10.4ms | ActiveRecord: 1.9ms | Allocations: 4896)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 03:38:41 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 6056ms (Views: 6049.6ms | ActiveRecord: 0.0ms | Allocations: 10017)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 03:38:48 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (1.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 11.4ms | Allocations: 3806)
+Completed 200 OK in 27ms (Views: 9.4ms | ActiveRecord: 4.5ms | Allocations: 4889)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 03:40:06 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 14159ms (Views: 14158.3ms | ActiveRecord: 0.0ms | Allocations: 10042)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 03:40:21 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (2.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 22.8ms | Allocations: 3807)
+Completed 200 OK in 32ms (Views: 23.1ms | ActiveRecord: 5.5ms | Allocations: 4896)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 03:43:53 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 9824ms (Views: 9823.0ms | ActiveRecord: 0.0ms | Allocations: 10056)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 03:44:04 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (2.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (2.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (4.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 36.6ms | Allocations: 3734)
+Completed 200 OK in 47ms (Views: 33.2ms | ActiveRecord: 9.5ms | Allocations: 4729)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 03:52:21 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 5084ms (Views: 5080.9ms | ActiveRecord: 0.0ms | Allocations: 10012)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 03:52:28 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 18.0ms | Allocations: 3806)
+Completed 200 OK in 28ms (Views: 17.2ms | ActiveRecord: 7.3ms | Allocations: 4894)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 04:13:26 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 6951ms (Views: 6949.1ms | ActiveRecord: 0.0ms | Allocations: 10020)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 04:14:07 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 4387ms (Views: 4384.4ms | ActiveRecord: 0.0ms | Allocations: 10008)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 04:14:12 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 16.5ms | Allocations: 3806)
+Completed 200 OK in 31ms (Views: 19.2ms | ActiveRecord: 3.3ms | Allocations: 4897)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 04:16:17 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 4207ms (Views: 4205.7ms | ActiveRecord: 0.0ms | Allocations: 10015)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 04:16:21 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 14.4ms | Allocations: 3816)
+Completed 200 OK in 19ms (Views: 13.8ms | ActiveRecord: 2.2ms | Allocations: 4902)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 04:17:23 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 4982ms (Views: 4981.2ms | ActiveRecord: 0.0ms | Allocations: 10015)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 04:17:29 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (1.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 9.2ms | Allocations: 3734)
+Completed 200 OK in 16ms (Views: 9.3ms | ActiveRecord: 2.0ms | Allocations: 4732)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 04:18:04 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 6252ms (Views: 6251.6ms | ActiveRecord: 0.0ms | Allocations: 10018)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 04:18:11 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (1.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 9.0ms | Allocations: 3734)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 2.4ms | Allocations: 4736)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 04:21:07 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 4599ms (Views: 4598.0ms | ActiveRecord: 0.0ms | Allocations: 10019)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 04:21:12 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 18.1ms | Allocations: 3806)
+Completed 200 OK in 31ms (Views: 18.7ms | ActiveRecord: 2.3ms | Allocations: 4892)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 04:21:16 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms | Allocations: 8328)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 04:21:17 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 17.1ms | Allocations: 3734)
+Completed 200 OK in 22ms (Views: 17.0ms | ActiveRecord: 2.2ms | Allocations: 4735)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 04:21:34 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 5124ms (Views: 5123.2ms | ActiveRecord: 0.0ms | Allocations: 10031)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 04:21:40 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (1.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 10.9ms | Allocations: 3734)
+Completed 200 OK in 17ms (Views: 10.8ms | ActiveRecord: 2.9ms | Allocations: 4740)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 04:23:58 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 9226ms (Views: 9225.0ms | ActiveRecord: 0.0ms | Allocations: 10032)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 04:24:09 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (4.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 15.9ms | Allocations: 3806)
+Completed 200 OK in 22ms (Views: 11.1ms | ActiveRecord: 6.8ms | Allocations: 4890)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 04:26:32 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 6502ms (Views: 6501.1ms | ActiveRecord: 0.0ms | Allocations: 10019)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 04:26:39 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 18.4ms | Allocations: 3734)
+Completed 200 OK in 26ms (Views: 19.4ms | ActiveRecord: 1.5ms | Allocations: 4737)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 04:27:51 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 12607ms (Views: 12605.2ms | ActiveRecord: 0.0ms | Allocations: 10032)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 04:28:06 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (6.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (1.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 23.1ms | Allocations: 3734)
+Completed 200 OK in 30ms (Views: 16.8ms | ActiveRecord: 8.7ms | Allocations: 4737)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 04:29:01 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 10131ms (Views: 10130.6ms | ActiveRecord: 0.0ms | Allocations: 10026)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 04:29:12 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (3.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (16.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 48.5ms | Allocations: 3734)
+Completed 200 OK in 58ms (Views: 33.8ms | ActiveRecord: 20.7ms | Allocations: 4730)
+
+
+Started GET "/api" for 127.0.0.1 at 2020-06-26 04:42:39 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/api"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 05:16:06 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 51e0d6a657a0b6ef61f7
+Version: webpack 4.43.0
+Time: 3335ms
+Built at: 06/26/2020 5:16:12 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-a0f96be015beff7f6fb9.js   1.85 MiB  application  [emitted] [immutable]  application
+js/application-a0f96be015beff7f6fb9.js.map   1.99 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-a0f96be015beff7f6fb9.js js/application-a0f96be015beff7f6fb9.js.map
+[./app/javascript/actions/BoardActions.js] 1.35 KiB {application} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/constants/ActionTypes.js] 399 bytes {application} [built]
+[./app/javascript/constants/ApiRoutes.js] 132 bytes {application} [built]
+[./app/javascript/lib/ApiClient.js] 1.41 KiB {application} [built]
+[./app/javascript/lib/Store.js] 327 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.89 KiB {application} [built]
+[./app/javascript/reducers/boards.js] 1.57 KiB {application} [built]
+[./app/javascript/reducers/cards.js] 454 bytes {application} [built]
+[./app/javascript/reducers/lists.js] 519 bytes {application} [built]
+[./app/javascript/reducers/rootReducer.js] 246 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 108 hidden modules
+
+ERROR in ./app/javascript/components/add-list/AddListContainer.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/edmondtam/LS/capstone/frameworks/project-management-app/app/javascript/components/add-list/AddListContainer.js: Unexpected token (13:2)
+
+  11 |   addList: (title, callback) => {
+  12 |     createList(title, ownProps.boardId, callback),
+> 13 |   },
+     |   ^
+  14 | });
+  15 | 
+  16 | export default connect(mapStateToProps, mapDispatchToProps)(AddList)
+    at Object._raise (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:754:17)
+    at Object.raiseWithData (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:747:17)
+    at Object.raise (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:741:17)
+    at Object.unexpected (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:8844:16)
+    at Object.parseExprAtom (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:10167:20)
+    at Object.parseExprAtom (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:4658:20)
+    at Object.parseExprSubscripts (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:9693:23)
+    at Object.parseMaybeUnary (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:9673:21)
+    at Object.parseExprOps (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:9543:23)
+    at Object.parseMaybeConditional (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:9516:23)
+    at Object.parseMaybeAssign (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:9471:21)
+    at Object.parseExpression (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:9430:36)
+    at Object.parseStatementContent (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:11322:23)
+    at Object.parseStatement (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:11193:17)
+    at Object.parseBlockOrModuleBlockBody (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:11768:25)
+    at Object.parseBlockBody (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:11754:10)
+    at Object.parseBlock (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:11738:10)
+    at Object.parseFunctionBody (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:10745:24)
+    at Object.parseArrowExpression (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:10714:10)
+    at Object.parseParenAndDistinguishExpression (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:10332:12)
+    at Object.parseExprAtom (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:10044:21)
+    at Object.parseExprAtom (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:4658:20)
+    at Object.parseExprSubscripts (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:9693:23)
+    at Object.parseMaybeUnary (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:9673:21)
+    at Object.parseExprOps (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:9543:23)
+    at Object.parseMaybeConditional (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:9516:23)
+    at Object.parseMaybeAssign (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:9471:21)
+    at Object.parseObjectProperty (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:10623:101)
+    at Object.parseObjPropValue (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:10648:101)
+    at Object.parseObjectMember (/home/edmondtam/LS/capstone/frameworks/project-management-app/node_modules/@babel/parser/lib/index.js:10572:10)
+ @ ./app/javascript/components/board/Board.js 25:0-60 147:43-59
+ @ ./app/javascript/components/board/BoardContainer.js
+ @ ./app/javascript/components/Application.jsx
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 5718ms (Views: 5713.8ms | ActiveRecord: 0.0ms | Allocations: 9994)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 05:16:59 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 4209ms (Views: 4208.3ms | ActiveRecord: 0.0ms | Allocations: 10033)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 05:17:04 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (1.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 21.7ms | Allocations: 3827)
+Completed 200 OK in 48ms (Views: 20.2ms | ActiveRecord: 4.3ms | Allocations: 4941)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 05:17:54 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 4402ms (Views: 4401.7ms | ActiveRecord: 0.0ms | Allocations: 10043)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 05:17:59 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 15.3ms | Allocations: 3734)
+Completed 200 OK in 24ms (Views: 15.1ms | ActiveRecord: 2.3ms | Allocations: 4736)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 05:18:25 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 3961ms (Views: 3960.1ms | ActiveRecord: 0.0ms | Allocations: 10042)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 05:18:30 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 13.0ms | Allocations: 3806)
+Completed 200 OK in 18ms (Views: 12.2ms | ActiveRecord: 2.7ms | Allocations: 4888)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 05:19:09 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 3640ms (Views: 3639.0ms | ActiveRecord: 0.0ms | Allocations: 10033)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 05:19:13 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (2.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 29.1ms | Allocations: 3734)
+Completed 200 OK in 35ms (Views: 28.0ms | ActiveRecord: 4.4ms | Allocations: 4731)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 05:20:15 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 4087ms (Views: 4086.6ms | ActiveRecord: 0.0ms | Allocations: 10037)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 05:20:20 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 14.6ms | Allocations: 3744)
+Completed 200 OK in 20ms (Views: 14.3ms | ActiveRecord: 1.7ms | Allocations: 4743)
+
+
+Started GET "/boards/5" for 127.0.0.1 at 2020-06-26 05:20:40 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/edmondtam/LS/capstone/frameworks/project-management-app/public/packs
+Completed 200 OK in 4314ms (Views: 4313.4ms | ActiveRecord: 0.0ms | Allocations: 10043)
+
+
+Started GET "/api/boards/5" for 127.0.0.1 at 2020-06-26 05:20:45 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (7.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 18.2ms | Allocations: 3734)
+Completed 200 OK in 23ms (Views: 11.8ms | ActiveRecord: 8.6ms | Allocations: 4732)
+
+
+Started POST "/api/lists" for 127.0.0.1 at 2020-06-26 05:20:47 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/api/lists"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'

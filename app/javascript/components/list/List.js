@@ -1,5 +1,6 @@
 import React from 'react';
 import CardListingContainer from '../card-listing/CardListingContainer';
+import AddCardContainer from '../add-card/AddCardContainer';
 
 const List = props => {
   return (
@@ -31,9 +32,7 @@ const List = props => {
               <span>...</span>
             </div>
           </div>
-          <div className='add-card-toggle' data-position='bottom'>
-            Add a card...
-          </div>
+          <AddCardContainer boardId={props.board_id} listId={props.id} />
         </div>
       </div>
     </div>

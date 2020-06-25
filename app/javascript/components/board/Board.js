@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ListListingContainer from '../list-listing/ListListingContainer';
+import AddListContainer from '../add-list/AddListContainer';
 
 class Board extends Component {
   componentDidMount() {
@@ -7,9 +8,11 @@ class Board extends Component {
   }
 
   render() {
+    let boardId;
     let title;
     if (this.props.board) {
       title = this.props.board.title;
+      boardId = this.props.board.id;
     }
     return (
       <>
@@ -29,14 +32,7 @@ class Board extends Component {
         <main>
           <div id='list-container' className='list-container'>
             <ListListingContainer />
-            <div id='new-list' className='new-list'>
-              <span>Add a list...</span>
-              <input type='text' placeholder='Add a list...' />
-              <div>
-                <input type='submit' className='button' value='Save' />
-                <i className='x-icon icon'></i>
-              </div>
-            </div>
+            <AddListContainer boardId={boardId} />
           </div>
         </main>
         <div className='menu-sidebar'>

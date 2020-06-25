@@ -1,8 +1,14 @@
+import * as types from "../constants/ActionTypes";
+
 export default function lists(state = [], action) {
   switch (action.type) {
-    case 'FETCH_BOARD_SUCCESS':
+    case types.FETCH_BOARD_SUCCESS:
       const { lists } = action.board;
       return lists;
+    case types.CREATE_LIST_REQUEST:
+      return state;
+    case types.CREATE_LIST_SUCCESS:
+      return action.payload;
     default:
       return state;
   }

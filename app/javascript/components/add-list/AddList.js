@@ -23,12 +23,14 @@ export default class AddList extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addList(this.state.title, () => {
-      this.closeForm();
-      this.setState({ title: "" }, () => {
-        document.getElementById("new-list-title").value = "";
+    if (this.state.title !== "") {
+      this.props.addList(this.state.title, () => {
+        this.closeForm();
+        this.setState({ title: "" }, () => {
+          document.getElementById("new-list-title").value = "";
+        });
       });
-    });
+    }
   };
 
   render() {

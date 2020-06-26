@@ -11,6 +11,7 @@
     "axios": "^0.19.0",
     "axios-mock-adapter": "^1.17.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "concurrently": "^5.2.0",
     "debounce": "^1.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
@@ -39,7 +40,10 @@
   },
   "scripts": {
     "test": "jest",
-    "lint": "eslint app/javascript/**/* --color"
+    "lint": "eslint app/javascript/**/* --color",
+    "webpacker-dev": "./bin/webpack-dev-server",
+    "rails-server": "rails s",
+    "start": "concurrently \"yarn run webpacker-dev\" \"yarn run rails-server\""
   },
   "jest": {
     "roots": [

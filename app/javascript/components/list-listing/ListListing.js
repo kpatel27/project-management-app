@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import List from '../list/List';
+import ListContainer from '../list/ListContainer';
 
 class ListListing extends Component {
   render() {
     return (
       <div id='existing-lists' className='existing-lists'>
         {this.props.lists.map(list => {
-          return <List key={list.id} {...list} />;
+          return <ListContainer key={list.id} {...list} />;
         })}
       </div>
     );

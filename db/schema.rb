@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_23_160816) do
+ActiveRecord::Schema.define(version: 2020_06_26_154703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "boards", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "cards", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.datetime "due_date"
     t.string "labels", default: [], null: false, array: true
     t.string "description"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_06_23_160816) do
   end
 
   create_table "lists", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.float "position"
     t.bigint "board_id", null: false
     t.datetime "created_at", precision: 6, null: false

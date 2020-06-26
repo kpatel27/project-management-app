@@ -18,7 +18,7 @@ export function createBoardRequest() {
 }
 
 export function createBoardSuccess(board) {
-  return { type: types.CREATE_BOARD_SUCCESS, board: board };
+  return { type: types.CREATE_BOARD_SUCCESS, board };
 }
 
 export function fetchBoards() {

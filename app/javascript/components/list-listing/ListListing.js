@@ -1,23 +1,24 @@
-import React, { Component } from 'react';
-import ListContainer from '../list/ListContainer';
+import React, { Component } from "react";
+import ListContainer from "../list/ListContainer";
 
 class ListListing extends Component {
   state = {
     addCardListId: null,
   };
 
-  handleShowForm = id => {
+  handleShowForm = (id) => {
+    console.log(id);
     this.setState({ addCardListId: id });
   };
 
-  handleHideForm = id => {
+  handleHideForm = (id) => {
     this.setState({ addCardListId: null });
   };
 
   render() {
     return (
-      <div id='existing-lists' className='existing-lists'>
-        {this.props.lists.map(list => {
+      <div id="existing-lists" className="existing-lists">
+        {this.props.lists.map((list) => {
           return (
             <ListContainer
               key={list.id}

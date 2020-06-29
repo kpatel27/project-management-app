@@ -13990,3 +13990,397 @@ Can't verify CSRF token authenticity.
 Completed 202 Accepted in 19ms (Views: 1.7ms | ActiveRecord: 5.6ms | Allocations: 5213)
 
 
+  [1m[35m (20.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBoard Load (53.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (127.9ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 10]]
+  [1m[36mCard Load (42.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 32]]
+  [1m[36mCard Destroy (0.5ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 41]]
+  [1m[36mCard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 42]]
+  [1m[36mList Destroy (26.2ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = $1[0m  [["id", 32]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 33]]
+  [1m[36mCard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 43]]
+  [1m[36mCard Destroy (0.2ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 44]]
+  [1m[36mCard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 45]]
+  [1m[36mList Destroy (0.4ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = $1[0m  [["id", 33]]
+  [1m[36mBoard Destroy (11.4ms)[0m  [1m[31mDELETE FROM "boards" WHERE "boards"."id" = $1[0m  [["id", 10]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mList Load (2.9ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Create (64.2ms)[0m  [1m[32mINSERT INTO "boards" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "First board"], ["created_at", "2020-06-29 15:52:03.240015"], ["updated_at", "2020-06-29 15:52:03.240015"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mList Create (25.5ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "First List"], ["board_id", 11], ["created_at", "2020-06-29 15:52:03.339210"], ["updated_at", "2020-06-29 15:52:03.339210"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mList Create (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Second List"], ["board_id", 11], ["created_at", "2020-06-29 15:52:03.372091"], ["updated_at", "2020-06-29 15:52:03.372091"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mCard Create (8.1ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 1 of List 1"], ["description", "Card1_1"], ["list_id", 34], ["created_at", "2020-06-29 15:52:03.380784"], ["updated_at", "2020-06-29 15:52:03.380784"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mCard Create (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 2 of List 1"], ["description", "Card1_2"], ["list_id", 34], ["created_at", "2020-06-29 15:52:03.403496"], ["updated_at", "2020-06-29 15:52:03.403496"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mCard Create (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 1 of List 2"], ["description", "Card2_1"], ["list_id", 35], ["created_at", "2020-06-29 15:52:03.421242"], ["updated_at", "2020-06-29 15:52:03.421242"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mCard Create (0.7ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 2 of List 2"], ["description", "Card2_2"], ["list_id", 35], ["created_at", "2020-06-29 15:52:03.441430"], ["updated_at", "2020-06-29 15:52:03.441430"]]
+  [1m[35m (81.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Load (1.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mCard Create (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("title", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Card 3 of List 2"], ["description", "Card2_3"], ["list_id", 35], ["created_at", "2020-06-29 15:52:03.540346"], ["updated_at", "2020-06-29 15:52:03.540346"]]
+  [1m[35m (41.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-06-29 08:53:14 -0700
+Started GET "/" for ::1 at 2020-06-29 08:53:14 -0700
+Started GET "/" for ::1 at 2020-06-29 08:53:18 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[35m (114.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 250)
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 102)
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+Started GET "/" for ::1 at 2020-06-29 08:53:30 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+Started GET "/" for ::1 at 2020-06-29 08:53:39 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 14767ms (Views: 14749.5ms | ActiveRecord: 0.0ms | Allocations: 5851727)
+
+
+Completed 200 OK in 26114ms (Views: 26113.1ms | ActiveRecord: 0.0ms | Allocations: 10011468)
+
+
+Completed 200 OK in 26103ms (Views: 26102.4ms | ActiveRecord: 0.0ms | Allocations: 10008606)
+
+
+Completed 200 OK in 26307ms (Views: 26123.1ms | ActiveRecord: 0.0ms | Allocations: 10016002)
+
+
+Completed 200 OK in 7850ms (Views: 7848.6ms | ActiveRecord: 0.0ms | Allocations: 3768765)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-29 08:53:49 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (3.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 121.9ms | Allocations: 3774)
+Completed 200 OK in 242ms (Views: 117.2ms | ActiveRecord: 10.5ms | Allocations: 6601)
+
+
+Started GET "/api/boards/11" for ::1 at 2020-06-29 08:53:52 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"11"}
+  [1m[36mBoard Load (101.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 34]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 35]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 1495.4ms | Allocations: 19992)
+Completed 200 OK in 1779ms (Views: 1482.2ms | ActiveRecord: 116.4ms | Allocations: 21653)
+
+
+Started POST "/api/lists" for ::1 at 2020-06-29 08:54:20 -0700
+Processing by Api::ListsController#create as JSON
+  Parameters: {"board_id"=>11, "list"=>{"title"=>"Third List"}}
+Can't verify CSRF token authenticity.
+  [1m[36mBoard Load (2.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:3:in `create'
+  [1m[36mCACHE Board Load (0.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[36mList Create (0.8ms)[0m  [1m[32mINSERT INTO "lists" ("title", "board_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Third List"], ["board_id", 11], ["created_at", "2020-06-29 15:54:20.873190"], ["updated_at", "2020-06-29 15:54:20.873190"]]
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/lists_controller.rb:7:in `create'
+  Rendering api/lists/create.json.jbuilder
+  Rendered api/lists/create.json.jbuilder (Duration: 16.5ms | Allocations: 164)
+Completed 201 Created in 48ms (Views: 34.7ms | ActiveRecord: 4.0ms | Allocations: 5656)
+
+
+Started GET "/api/cards/1" for ::1 at 2020-06-29 09:12:33 -0700
+Processing by Api::CardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:11:in `show'
+Completed 404 Not Found in 67ms (ActiveRecord: 1.6ms | Allocations: 2266)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Card with 'id'=1):
+  
+app/controllers/api/cards_controller.rb:11:in `show'
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY "cards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/cards/46" for ::1 at 2020-06-29 09:14:22 -0700
+Processing by Api::CardsController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:11:in `show'
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.8ms | Allocations: 7476)
+
+
+  
+ActionView::MissingTemplate (Missing template api/cards/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/krunalpatel/Desktop/code/reaction_boilerplate/app/views"
+  * "/Users/krunalpatel/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.2/app/views"
+  * "/Users/krunalpatel/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/api/cards_controller.rb:13:in `show'
+Started GET "/api/cards/46" for ::1 at 2020-06-29 09:19:17 -0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::CardsController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:11:in `show'
+Completed 500 Internal Server Error in 325ms (ActiveRecord: 10.8ms | Allocations: 10733)
+
+
+  
+ActionView::MissingTemplate (Missing template api/cards/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/krunalpatel/Desktop/code/reaction_boilerplate/app/views"
+  * "/Users/krunalpatel/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.2/app/views"
+  * "/Users/krunalpatel/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/api/cards_controller.rb:13:in `show'
+Started GET "/api/cards/46" for ::1 at 2020-06-29 09:19:32 -0700
+Processing by Api::CardsController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:11:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 1440)
+
+
+  
+ActionView::MissingTemplate (Missing template api/cards/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/krunalpatel/Desktop/code/reaction_boilerplate/app/views"
+  * "/Users/krunalpatel/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.2/app/views"
+  * "/Users/krunalpatel/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/api/cards_controller.rb:13:in `show'
+Started GET "/api/lists/5" for ::1 at 2020-06-29 09:21:07 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/lists/5"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/lists/7" for ::1 at 2020-06-29 09:21:11 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/lists/7"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/cards/46" for ::1 at 2020-06-29 09:22:18 -0700
+Processing by Api::CardsController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:11:in `show'
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 9.5ms | Allocations: 8216)
+
+
+  
+ActionView::MissingTemplate (Missing template api/cards/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/krunalpatel/Desktop/code/reaction_boilerplate/app/views"
+  * "/Users/krunalpatel/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.2/app/views"
+  * "/Users/krunalpatel/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/api/cards_controller.rb:13:in `show'
+Started GET "/boards/10" for ::1 at 2020-06-29 09:23:29 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"10"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 74)
+Started GET "/api/boards/10" for ::1 at 2020-06-29 09:23:36 -0700
+Processing by Api::BoardsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 41.8ms | Allocations: 11607)
+
+
+  
+ActionView::MissingTemplate (Missing template api/shared/error with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/krunalpatel/Desktop/code/reaction_boilerplate/app/views"
+  * "/Users/krunalpatel/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.2/app/views"
+  * "/Users/krunalpatel/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.2/app/views"
+):
+  
+app/controllers/api/boards_controller.rb:27:in `rescue in show'
+app/controllers/api/boards_controller.rb:21:in `show'
+Completed 200 OK in 7775ms (Views: 7774.0ms | ActiveRecord: 0.0ms | Allocations: 2651415)
+
+
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/boards/11.json" for ::1 at 2020-06-29 09:24:38 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"11"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 34]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 35]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 36]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 180.5ms | Allocations: 16120)
+Completed 200 OK in 198ms (Views: 184.8ms | ActiveRecord: 6.5ms | Allocations: 20466)
+
+
+Started GET "/api/cards/46.json" for ::1 at 2020-06-29 09:24:55 -0700
+Processing by Api::CardsController#show as JSON
+  Parameters: {"id"=>"46"}
+  [1m[36mCard Load (2.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:11:in `show'
+  Rendering api/cards/show.json.jbuilder
+  Rendered api/cards/show.json.jbuilder (Duration: 16.9ms | Allocations: 216)
+Completed 201 Created in 67ms (Views: 63.1ms | ActiveRecord: 2.1ms | Allocations: 1676)
+
+
+Started GET "/" for ::1 at 2020-06-29 09:28:56 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 45ms (Views: 44.0ms | ActiveRecord: 0.0ms | Allocations: 7261)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-29 09:28:56 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (12.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 38.2ms | Allocations: 830)
+Completed 200 OK in 40ms (Views: 27.6ms | ActiveRecord: 12.0ms | Allocations: 1439)
+
+
+Started GET "/api/boards/11" for ::1 at 2020-06-29 09:28:59 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"11"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 34]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 35]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (2.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 36]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 11.4ms | Allocations: 4728)
+Completed 200 OK in 14ms (Views: 8.8ms | ActiveRecord: 3.6ms | Allocations: 5762)
+
+
+Started POST "/api/cards" for ::1 at 2020-06-29 09:33:01 -0700
+Processing by Api::CardsController#create as */*
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 41ms (ActiveRecord: 0.0ms | Allocations: 1071)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: card):
+  
+app/controllers/api/cards_controller.rb:31:in `card_params'
+app/controllers/api/cards_controller.rb:3:in `create'
+Started POST "/api/cards" for ::1 at 2020-06-29 09:33:54 -0700
+Processing by Api::CardsController#create as */*
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 1066)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: card):
+  
+app/controllers/api/cards_controller.rb:32:in `card_params'
+app/controllers/api/cards_controller.rb:4:in `create'
+Started POST "/api/cards" for ::1 at 2020-06-29 09:35:55 -0700
+Processing by Api::CardsController#create as */*
+  Parameters: {"list_id"=>11, "card"=>{"title"=>"My new card"}}
+Can't verify CSRF token authenticity.
+  Rendering api/cards/create.json.jbuilder
+  Rendered api/cards/create.json.jbuilder (Duration: 19.7ms | Allocations: 170)
+Completed 200 OK in 391ms (Views: 332.1ms | ActiveRecord: 7.2ms | Allocations: 7820)
+
+

@@ -7,11 +7,10 @@ class ListListing extends Component {
   };
 
   handleShowForm = (id) => {
-    console.log(id);
     this.setState({ addCardListId: id });
   };
 
-  handleHideForm = (id) => {
+  handleHideForm = () => {
     this.setState({ addCardListId: null });
   };
 

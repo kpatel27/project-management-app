@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import AddCard from './AddCard';
+import { connect } from "react-redux";
+import AddCard from "./AddCard";
+import { createCard } from "../../actions/CardActions";
 
-const mapStateToProps = state => ({});
+const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {

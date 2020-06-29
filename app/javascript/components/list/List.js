@@ -70,6 +70,18 @@ class List extends Component {
               onClickShowForm={this.props.onClickShowForm}
               onClickHideForm={this.props.onClickHideForm}
             />
+            {/* <div class="add-dropdown add-bottom active-card">
+              <div class="card">
+                <div class="card-info"></div>
+                <textarea name="add-card"></textarea>
+                <div class="members"></div>
+              </div>
+              <a class="button">Add</a>
+              <i class="x-icon icon"></i>
+              <div class="add-options">
+                <span>...</span>
+              </div>
+            </div> */}
           </div>
         </div>
       </div>

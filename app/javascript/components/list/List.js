@@ -26,9 +26,13 @@ class List extends Component {
     }
   };
 
+  handleAddCard = () => {
+
+  }
+
   render() {
     return (
-      <div className='list-wrapper'>
+      <div className={`list-wrapper${this.props.addCardListId &&}`}>
         <div className='list-background'>
           <div className='list'>
             <a className='more-icon sm-icon' href=''></a>
@@ -71,6 +75,8 @@ class List extends Component {
             <AddCardContainer
               boardId={this.props.board_id}
               listId={this.props.id}
+              onClickShowForm={this.props.onClickShowForm}
+              onClickHideForm={this.props.onClickHideForm}
             />
           </div>
         </div>

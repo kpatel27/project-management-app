@@ -1,10 +1,8 @@
-import { connect } from 'react-redux';
-import List from './List';
-import { editList } from '../../actions/ListActions';
+import { connect } from "react-redux";
+import List from "./List";
+import { editList } from "../../actions/ListActions";
 
-const mapStateToProps = (state, ownProps) => ({
-  // board: state.boards.find(board => board.id === +ownProps.match.params.id),
-});
+const mapStateToProps = (state, ownProps) => ({});
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {

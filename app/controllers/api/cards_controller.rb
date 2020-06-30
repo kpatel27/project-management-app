@@ -20,7 +20,10 @@ class Api::CardsController < ApplicationController
 
   def show
     @card = Card.find(params[:id])
+    
     if @card
+      @list = @card.list
+      @board = @list.board
       render 'api/cards/show', status: 201
     else
       @error = @card.errors.full_messages.join(', ')

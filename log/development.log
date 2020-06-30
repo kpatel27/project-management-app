@@ -16824,3 +16824,1625 @@ Processing by Api::BoardsController#show as JSON
 Completed 200 OK in 29ms (Views: 23.9ms | ActiveRecord: 2.9ms | Allocations: 7248)
 
 
+Started GET "/boards/5" for ::1 at 2020-06-30 08:40:30 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 190)
+Started GET "/boards/5" for ::1 at 2020-06-30 08:40:31 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 5013ms (Views: 5003.8ms | ActiveRecord: 0.0ms | Allocations: 4310717)
+
+
+Completed 200 OK in 4036ms (Views: 4035.7ms | ActiveRecord: 0.0ms | Allocations: 3715428)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 08:40:36 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (30.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (48.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 222.6ms | Allocations: 20951)
+Completed 200 OK in 293ms (Views: 100.2ms | ActiveRecord: 149.5ms | Allocations: 27709)
+
+
+Started GET "/" for ::1 at 2020-06-30 08:40:36 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 7317)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 08:40:36 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 2.4ms | Allocations: 830)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 1420)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 08:40:42 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 7.2ms | Allocations: 4730)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 1.6ms | Allocations: 5759)
+
+
+Started POST "/api/cards" for ::1 at 2020-06-30 08:41:08 -0700
+Processing by Api::CardsController#create as JSON
+  Parameters: {"list_id"=>12, "card"=>{"title"=>"Test"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/cards_controller.rb:6:in `create'
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:6:in `create'
+  [1m[36mCard Create (4.1ms)[0m  [1m[32mINSERT INTO "cards" ("title", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Test"], ["list_id", 12], ["created_at", "2020-06-30 15:41:08.019537"], ["updated_at", "2020-06-30 15:41:08.019537"]]
+  ↳ app/controllers/api/cards_controller.rb:6:in `create'
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/cards_controller.rb:6:in `create'
+  Rendering api/cards/create.json.jbuilder
+  Rendered api/cards/create.json.jbuilder (Duration: 0.9ms | Allocations: 194)
+Completed 201 Created in 21ms (Views: 2.9ms | ActiveRecord: 12.3ms | Allocations: 5315)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 08:41:13 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 7323)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 08:41:13 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (3.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (4.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (6.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 22.7ms | Allocations: 5294)
+Completed 200 OK in 28ms (Views: 11.7ms | ActiveRecord: 15.0ms | Allocations: 6308)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 08:44:32 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 4)
+Completed 200 OK in 141ms (Views: 128.4ms | ActiveRecord: 0.0ms | Allocations: 7317)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 08:44:33 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (3.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (10.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 51.1ms | Allocations: 7118)
+Completed 200 OK in 72ms (Views: 45.7ms | ActiveRecord: 15.6ms | Allocations: 9340)
+
+
+Started GET "/ui" for ::1 at 2020-06-30 08:45:50 -0700
+Processing by UiController#index as HTML
+  Rendering ui/index.html.erb within layouts/static
+  Rendered ui/index.html.erb within layouts/static (Duration: 1.8ms | Allocations: 783)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.0ms | Allocations: 13138)
+
+
+Started GET "/ui/card" for ::1 at 2020-06-30 08:45:52 -0700
+Processing by UiController#card as HTML
+  Rendering ui/card.html.erb within layouts/static
+  Rendered ui/card.html.erb within layouts/static (Duration: 0.5ms | Allocations: 252)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 11540)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 08:48:15 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 4)
+Completed 200 OK in 67ms (Views: 59.3ms | ActiveRecord: 0.0ms | Allocations: 7321)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 08:48:49 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 7322)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 08:51:02 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.0ms | Allocations: 7314)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 08:51:04 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.0ms | Allocations: 7326)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 08:51:20 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 7317)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 08:52:09 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 7312)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 08:52:33 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 7312)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 08:52:34 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (1.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (5.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (22.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (5.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 63.6ms | Allocations: 9124)
+Completed 200 OK in 74ms (Views: 30.0ms | ActiveRecord: 37.1ms | Allocations: 10848)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 08:54:01 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 7313)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 08:54:02 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (1.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (5.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (8.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (9.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 213.9ms | Allocations: 7798)
+Completed 200 OK in 235ms (Views: 190.7ms | ActiveRecord: 31.1ms | Allocations: 11581)
+
+
+Started GET "/card/11" for ::1 at 2020-06-30 09:02:03 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/card/11"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-06-30 09:02:27 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 71)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms | Allocations: 8331)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:02:28 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (11.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 14.2ms | Allocations: 2830)
+Completed 200 OK in 27ms (Views: 15.2ms | ActiveRecord: 11.0ms | Allocations: 5605)
+
+
+Started GET "/" for ::1 at 2020-06-30 09:02:29 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 7311)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:02:30 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (3.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 5.0ms | Allocations: 2569)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 3.5ms | Allocations: 3167)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:02:31 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 17.5ms | Allocations: 5467)
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 3.8ms | Allocations: 6710)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:04:49 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/cards/12"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-06-30 09:05:04 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+Completed 200 OK in 63ms (Views: 59.2ms | ActiveRecord: 0.0ms | Allocations: 7323)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:05:05 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (1.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 9.4ms | Allocations: 1942)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 1.3ms | Allocations: 2699)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:05:06 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (3.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 31.9ms | Allocations: 4952)
+Completed 200 OK in 50ms (Views: 26.9ms | ActiveRecord: 19.2ms | Allocations: 6465)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:06:55 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/cards/12"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-06-30 09:07:01 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 7313)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:07:01 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (11.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 262.0ms | Allocations: 3793)
+Completed 200 OK in 267ms (Views: 253.2ms | ActiveRecord: 11.3ms | Allocations: 4272)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:07:02 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 12.3ms | Allocations: 5367)
+Completed 200 OK in 16ms (Views: 10.6ms | ActiveRecord: 2.9ms | Allocations: 6408)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:07:34 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/cards/12"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/cards/12" for ::1 at 2020-06-30 09:07:38 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/cards/12"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-06-30 09:09:26 -0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 190)
+Completed 200 OK in 2237ms (Views: 2231.9ms | ActiveRecord: 0.0ms | Allocations: 2386040)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:09:29 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (0.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 21.0ms | Allocations: 3773)
+Completed 200 OK in 32ms (Views: 9.0ms | ActiveRecord: 15.3ms | Allocations: 6581)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:09:33 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 45.2ms | Allocations: 21619)
+Completed 200 OK in 50ms (Views: 39.2ms | ActiveRecord: 7.7ms | Allocations: 23290)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:11:10 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 7469)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:11:10 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (1.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.8ms | Allocations: 100)
+Completed 404 Not Found in 18ms (Views: 3.3ms | ActiveRecord: 9.1ms | Allocations: 5827)
+
+
+Started GET "/" for ::1 at 2020-06-30 09:12:21 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 7317)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:12:21 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 4.4ms | Allocations: 3060)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.4ms | Allocations: 3571)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:12:22 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (4.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 163.9ms | Allocations: 21195)
+Completed 200 OK in 167ms (Views: 44.6ms | ActiveRecord: 120.1ms | Allocations: 22207)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:12:27 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 7317)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:12:27 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1334)
+
+
+Started GET "/" for ::1 at 2020-06-30 09:15:49 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 7317)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:15:50 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (3.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 4.5ms | Allocations: 2849)
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 3.3ms | Allocations: 3336)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:15:51 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (2.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (16.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 35.7ms | Allocations: 5296)
+Completed 200 OK in 39ms (Views: 15.2ms | ActiveRecord: 22.2ms | Allocations: 6305)
+
+
+Started GET "/" for ::1 at 2020-06-30 09:16:06 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 7322)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:16:06 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 2.2ms | Allocations: 757)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.8ms | Allocations: 1206)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:16:08 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (2.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 6.3ms | Allocations: 4880)
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 3.4ms | Allocations: 5892)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 09:16:15 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 7314)
+
+
+Started GET "/api/boards/undefined" for ::1 at 2020-06-30 09:16:16 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1342)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 09:16:47 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 7315)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:16:47 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (73.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 91.9ms | Allocations: 4880)
+Completed 200 OK in 94ms (Views: 17.3ms | ActiveRecord: 75.5ms | Allocations: 5893)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:17:09 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 7313)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:17:09 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (57.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 102ms (Views: 0.6ms | ActiveRecord: 58.6ms | Allocations: 3961)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 09:17:36 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 7736)
+
+
+Started GET "/" for ::1 at 2020-06-30 09:17:37 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Started GET "/api/boards" for ::1 at 2020-06-30 09:17:37 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 2.4ms | Allocations: 1328)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 1848)
+
+
+Completed 200 OK in 22ms (Views: 21.7ms | ActiveRecord: 0.0ms | Allocations: 10474)
+
+
+Started GET "/" for ::1 at 2020-06-30 09:17:40 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 7313)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:17:40 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (1.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 7.3ms | Allocations: 2108)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 1.6ms | Allocations: 3074)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:17:41 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 10.3ms | Allocations: 5367)
+Completed 200 OK in 13ms (Views: 9.2ms | ActiveRecord: 1.9ms | Allocations: 6380)
+
+
+Started GET "/" for ::1 at 2020-06-30 09:18:03 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 35ms (Views: 35.0ms | ActiveRecord: 0.0ms | Allocations: 7324)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:18:04 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 2.1ms | Allocations: 757)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1212)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:18:05 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (2.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 13.8ms | Allocations: 4952)
+Completed 200 OK in 21ms (Views: 10.4ms | ActiveRecord: 8.2ms | Allocations: 5988)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:20:58 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms | Allocations: 7317)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:20:58 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (110.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.3ms | Allocations: 39)
+Completed 404 Not Found in 117ms (Views: 1.1ms | ActiveRecord: 110.5ms | Allocations: 2350)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:24:34 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 7311)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:24:35 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (3.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 7ms (Views: 1.3ms | ActiveRecord: 3.9ms | Allocations: 1437)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:25:46 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 7315)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:25:47 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (103.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.5ms | Allocations: 39)
+Completed 404 Not Found in 113ms (Views: 1.9ms | ActiveRecord: 103.2ms | Allocations: 2255)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:26:23 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 7313)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:26:24 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (19.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 22ms (Views: 1.0ms | ActiveRecord: 19.0ms | Allocations: 1502)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:28:59 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 230ms (Views: 229.6ms | ActiveRecord: 0.0ms | Allocations: 7316)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:29:00 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (1.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.2ms | Allocations: 39)
+Completed 404 Not Found in 5ms (Views: 1.0ms | ActiveRecord: 1.4ms | Allocations: 1330)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:29:04 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 7315)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:29:05 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 1333)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:30:45 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 7312)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:30:46 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (12.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 3.7ms | Allocations: 39)
+Completed 404 Not Found in 56ms (Views: 4.5ms | ActiveRecord: 14.0ms | Allocations: 1608)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:31:02 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 75ms (Views: 68.0ms | ActiveRecord: 0.0ms | Allocations: 7316)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:31:02 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 4ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1389)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:31:55 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 0.0ms | Allocations: 7311)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:31:55 -0700
+Started GET "/api/cards/undefined" for ::1 at 2020-06-30 09:31:55 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (4.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 8ms (Views: 0.7ms | ActiveRecord: 4.6ms | Allocations: 2557)
+
+
+Processing by Api::CardsController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mCard Load (14.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:22:in `show'
+Completed 404 Not Found in 167ms (ActiveRecord: 14.4ms | Allocations: 3129)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Card with 'id'=undefined):
+  
+app/controllers/api/cards_controller.rb:22:in `show'
+Started GET "/cards/12" for ::1 at 2020-06-30 09:32:40 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.0ms | Allocations: 7337)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:32:41 -0700
+Started GET "/api/cards/undefined" for ::1 at 2020-06-30 09:32:41 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+Processing by Api::CardsController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mBoard Load (11.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 40)
+Completed 404 Not Found in 14ms (Views: 0.5ms | ActiveRecord: 11.6ms | Allocations: 3350)
+
+
+  [1m[36mCard Load (2.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:22:in `show'
+Completed 404 Not Found in 45ms (ActiveRecord: 2.2ms | Allocations: 4981)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Card with 'id'=undefined):
+  
+app/controllers/api/cards_controller.rb:22:in `show'
+Started GET "/cards/12" for ::1 at 2020-06-30 09:34:48 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 7321)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:34:49 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (65.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 68ms (Views: 0.8ms | ActiveRecord: 65.6ms | Allocations: 1819)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:34:53 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 7315)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:34:54 -0700
+Started GET "/api/cards/12" for ::1 at 2020-06-30 09:34:54 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+Processing by Api::CardsController#show as JSON
+  [1m[36mBoard Load (2.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Parameters: {"id"=>"12"}
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 5ms (Views: 0.8ms | ActiveRecord: 2.0ms | Allocations: 2057)
+
+
+  [1m[36mCard Load (55.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:22:in `show'
+  Rendering api/cards/show.json.jbuilder
+  Rendered api/cards/show.json.jbuilder (Duration: 1.5ms | Allocations: 778)
+Completed 201 Created in 64ms (Views: 5.5ms | ActiveRecord: 55.1ms | Allocations: 6123)
+
+
+Started GET "/" for ::1 at 2020-06-30 09:39:49 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 7313)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:39:49 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (2.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 6.7ms | Allocations: 789)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 2.8ms | Allocations: 1797)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:39:51 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (4.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (4.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (12.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 38.7ms | Allocations: 5306)
+Completed 200 OK in 41ms (Views: 17.9ms | ActiveRecord: 21.9ms | Allocations: 6323)
+
+
+Started GET "/" for ::1 at 2020-06-30 09:40:21 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Started GET "/api/boards" for ::1 at 2020-06-30 09:40:21 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 9338)
+
+
+  [1m[36mBoard Load (9.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 11.5ms | Allocations: 1529)
+Completed 200 OK in 14ms (Views: 3.4ms | ActiveRecord: 9.3ms | Allocations: 1989)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:40:29 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 11.2ms | Allocations: 4880)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 1.7ms | Allocations: 5893)
+
+
+Started GET "/boards/5" for ::1 at 2020-06-30 09:40:46 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 7315)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:40:47 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (2.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.9ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (2.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (76.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 89.3ms | Allocations: 9126)
+Completed 200 OK in 95ms (Views: 10.2ms | ActiveRecord: 82.5ms | Allocations: 11348)
+
+
+Started GET "/" for ::1 at 2020-06-30 09:41:45 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 4)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 7318)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:41:45 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (1.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 2.8ms | Allocations: 1918)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 1.0ms | Allocations: 2374)
+
+
+Started POST "/api/boards" for ::1 at 2020-06-30 09:41:52 -0700
+Processing by Api::BoardsController#create as JSON
+  Parameters: {"board"=>{"title"=>"Second Board"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/boards_controller.rb:10:in `create'
+  [1m[36mBoard Create (4.0ms)[0m  [1m[32mINSERT INTO "boards" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Second Board"], ["created_at", "2020-06-30 16:41:52.104263"], ["updated_at", "2020-06-30 16:41:52.104263"]]
+  ↳ app/controllers/api/boards_controller.rb:10:in `create'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/boards_controller.rb:10:in `create'
+  Rendering api/boards/create.json.jbuilder
+  Rendered api/boards/create.json.jbuilder (Duration: 0.9ms | Allocations: 150)
+Completed 201 Created in 14ms (Views: 2.4ms | ActiveRecord: 6.1ms | Allocations: 3412)
+
+
+Started GET "/api/boards/6" for ::1 at 2020-06-30 09:41:53 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mBoard Load (0.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (10.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  Rendered api/boards/show.json.jbuilder (Duration: 13.2ms | Allocations: 955)
+Completed 200 OK in 17ms (Views: 3.1ms | ActiveRecord: 11.6ms | Allocations: 2384)
+
+
+Started GET "/boards/6" for ::1 at 2020-06-30 09:42:30 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 7313)
+
+
+Started GET "/boards/6" for ::1 at 2020-06-30 09:42:40 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 7309)
+
+
+Started GET "/boards/6" for ::1 at 2020-06-30 09:42:45 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 7316)
+
+
+Started GET "/api/boards/6" for ::1 at 2020-06-30 09:42:46 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mBoard Load (1.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (1.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  Rendered api/boards/show.json.jbuilder (Duration: 48.8ms | Allocations: 4435)
+Completed 200 OK in 53ms (Views: 48.0ms | ActiveRecord: 3.2ms | Allocations: 5498)
+
+
+Started GET "/" for ::1 at 2020-06-30 09:42:52 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 7317)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:42:53 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (1.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 4.3ms | Allocations: 2005)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 1.4ms | Allocations: 2468)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:42:54 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (22.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 36.8ms | Allocations: 4880)
+Completed 200 OK in 40ms (Views: 14.0ms | ActiveRecord: 23.7ms | Allocations: 5890)
+
+
+Started GET "/api/cards/12" for ::1 at 2020-06-30 09:42:56 -0700
+Processing by Api::CardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:22:in `show'
+  Rendering api/cards/show.json.jbuilder
+  Rendered api/cards/show.json.jbuilder (Duration: 0.6ms | Allocations: 149)
+Completed 201 Created in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 1184)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:42:58 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 7320)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:42:59 -0700
+Started GET "/api/cards/12" for ::1 at 2020-06-30 09:42:59 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (21.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.2ms | Allocations: 39)
+Completed 404 Not Found in 24ms (Views: 0.7ms | ActiveRecord: 21.1ms | Allocations: 1472)
+
+
+Processing by Api::CardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mCard Load (26.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:22:in `show'
+  Rendering api/cards/show.json.jbuilder
+  Rendered api/cards/show.json.jbuilder (Duration: 0.3ms | Allocations: 149)
+Completed 201 Created in 29ms (Views: 0.9ms | ActiveRecord: 26.4ms | Allocations: 3098)
+
+
+Started GET "/" for ::1 at 2020-06-30 09:46:19 -0700
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 7318)
+
+
+Started GET "/api/boards" for ::1 at 2020-06-30 09:46:20 -0700
+Processing by Api::BoardsController#index as JSON
+  Rendering api/boards/index.json.jbuilder
+  [1m[36mBoard Load (3.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/api/boards/index.json.jbuilder:1
+  Rendered api/boards/index.json.jbuilder (Duration: 9.4ms | Allocations: 2038)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 3.4ms | Allocations: 2523)
+
+
+Started GET "/api/boards/5" for ::1 at 2020-06-30 09:46:22 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 5]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (3.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 11]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (8.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 12]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 13]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 27.1ms | Allocations: 5295)
+Completed 200 OK in 30ms (Views: 15.1ms | ActiveRecord: 13.1ms | Allocations: 6302)
+
+
+Started GET "/api/cards/12" for ::1 at 2020-06-30 09:47:12 -0700
+Processing by Api::CardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:22:in `show'
+  Rendering api/cards/show.json.jbuilder
+  Rendered api/cards/show.json.jbuilder (Duration: 0.4ms | Allocations: 149)
+Completed 201 Created in 7ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1174)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:52:05 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 77)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 8311)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:52:06 -0700
+Started GET "/api/cards/12" for ::1 at 2020-06-30 09:52:06 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+Processing by Api::CardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (3.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 1.9ms | Allocations: 113)
+Completed 404 Not Found in 184ms (Views: 12.4ms | ActiveRecord: 151.5ms | Allocations: 11037)
+
+
+  [1m[36mCard Load (2.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:22:in `show'
+  [1m[36mList Load (1.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:23:in `show'
+  Rendering api/cards/show.json.jbuilder
+  Rendered api/cards/show.json.jbuilder (Duration: 1.0ms | Allocations: 207)
+Completed 201 Created in 224ms (Views: 3.9ms | ActiveRecord: 166.5ms | Allocations: 19582)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:52:39 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 7462)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:52:40 -0700
+Started GET "/api/cards/12" for ::1 at 2020-06-30 09:52:40 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+Processing by Api::CardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (11.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 63ms (Views: 0.8ms | ActiveRecord: 27.7ms | Allocations: 8956)
+
+
+  [1m[36mCard Load (4.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:22:in `show'
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:23:in `show'
+  Rendering api/cards/show.json.jbuilder
+  Rendered api/cards/show.json.jbuilder (Duration: 0.3ms | Allocations: 148)
+Completed 201 Created in 93ms (Views: 1.3ms | ActiveRecord: 65.2ms | Allocations: 18646)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:53:14 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 39ms (Views: 38.9ms | ActiveRecord: 0.0ms | Allocations: 7464)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:53:15 -0700
+Started GET "/api/cards/12" for ::1 at 2020-06-30 09:53:15 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+Processing by Api::CardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (1.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.3ms | Allocations: 39)
+Completed 404 Not Found in 32ms (Views: 2.6ms | ActiveRecord: 22.7ms | Allocations: 8601)
+
+
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:22:in `show'
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:23:in `show'
+  Rendering api/cards/show.json.jbuilder
+  Rendered api/cards/show.json.jbuilder (Duration: 1.5ms | Allocations: 147)
+Completed 201 Created in 79ms (Views: 8.3ms | ActiveRecord: 49.9ms | Allocations: 16257)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:53:40 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 7466)
+
+
+Started GET "/api/cards/12" for ::1 at 2020-06-30 09:53:41 -0700
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:53:41 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+Processing by Api::CardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mCard Load (7.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:22:in `show'
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:23:in `show'
+  Rendering api/cards/show.json.jbuilder
+  Rendered api/cards/show.json.jbuilder (Duration: 2.5ms | Allocations: 147)
+Completed 201 Created in 132ms (Views: 4.8ms | ActiveRecord: 56.7ms | Allocations: 16281)
+
+
+  [1m[36mBoard Load (52.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.2ms | Allocations: 39)
+Completed 404 Not Found in 200ms (Views: 1.4ms | ActiveRecord: 164.0ms | Allocations: 22431)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:54:12 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 7474)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:54:13 -0700
+Started GET "/api/cards/12" for ::1 at 2020-06-30 09:54:13 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+Processing by Api::CardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 57ms (Views: 0.9ms | ActiveRecord: 50.2ms | Allocations: 8796)
+
+
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:22:in `show'
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:23:in `show'
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:24:in `show'
+  Rendering api/cards/show.json.jbuilder
+  Rendered api/cards/show.json.jbuilder (Duration: 0.4ms | Allocations: 147)
+Completed 201 Created in 76ms (Views: 1.4ms | ActiveRecord: 40.3ms | Allocations: 21351)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:54:35 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.0ms | Allocations: 7462)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:54:36 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+Started GET "/api/cards/12" for ::1 at 2020-06-30 09:54:36 -0700
+Processing by Api::CardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (17.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 49ms (Views: 0.9ms | ActiveRecord: 43.9ms | Allocations: 9636)
+
+
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:22:in `show'
+  [1m[36mList Load (1.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:23:in `show'
+  [1m[36mBoard Load (58.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:24:in `show'
+  Rendering api/cards/show.json.jbuilder
+  Rendered api/cards/show.json.jbuilder (Duration: 0.4ms | Allocations: 147)
+Completed 201 Created in 223ms (Views: 1.9ms | ActiveRecord: 177.0ms | Allocations: 21155)
+
+
+Started GET "/cards/12" for ::1 at 2020-06-30 09:55:12 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"12"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.0ms | Allocations: 7464)
+
+
+Started GET "/api/boards/12" for ::1 at 2020-06-30 09:55:13 -0700
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"12"}
+Started GET "/api/cards/12" for ::1 at 2020-06-30 09:55:13 -0700
+Processing by Api::CardsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/shared/error.json.jbuilder
+  Rendered api/shared/error.json.jbuilder (Duration: 0.1ms | Allocations: 39)
+Completed 404 Not Found in 61ms (Views: 0.9ms | ActiveRecord: 54.2ms | Allocations: 9640)
+
+
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:22:in `show'
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:23:in `show'
+  [1m[36mBoard Load (1.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:24:in `show'
+  Rendering api/cards/show.json.jbuilder
+  Rendered api/cards/show.json.jbuilder (Duration: 0.3ms | Allocations: 146)
+Completed 201 Created in 107ms (Views: 1.7ms | ActiveRecord: 67.2ms | Allocations: 21372)
+
+

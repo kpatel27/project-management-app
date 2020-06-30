@@ -16824,3 +16824,65 @@ Processing by Api::BoardsController#show as JSON
 Completed 200 OK in 29ms (Views: 23.9ms | ActiveRecord: 2.9ms | Allocations: 7248)
 
 
+Started GET "/" for 127.0.0.1 at 2020-06-30 23:53:56 +0800
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 189)
+Started GET "/ui" for 127.0.0.1 at 2020-06-30 23:53:59 +0800
+Processing by UiController#index as HTML
+  Rendering ui/index.html.erb within layouts/static
+  Rendered ui/index.html.erb within layouts/static (Duration: 3.0ms | Allocations: 1880)
+Started GET "/ui" for 127.0.0.1 at 2020-06-30 23:54:08 +0800
+Processing by UiController#index as HTML
+  Rendering ui/index.html.erb within layouts/static
+  Rendered ui/index.html.erb within layouts/static (Duration: 3.0ms | Allocations: 553)
+Completed 200 OK in 16040ms (Views: 16005.5ms | ActiveRecord: 0.0ms | Allocations: 5088523)
+
+
+Completed 200 OK in 13585ms (Views: 13582.4ms | ActiveRecord: 0.0ms | Allocations: 4473443)
+
+
+Completed 200 OK in 6886ms (Views: 6883.0ms | ActiveRecord: 0.0ms | Allocations: 3312510)
+
+
+Started GET "/ui/card" for 127.0.0.1 at 2020-06-30 23:54:21 +0800
+Processing by UiController#card as HTML
+  Rendering ui/card.html.erb within layouts/static
+  Rendered ui/card.html.erb within layouts/static (Duration: 1.2ms | Allocations: 259)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.0ms | Allocations: 11502)
+
+
+Started GET "/ui/single_board" for 127.0.0.1 at 2020-06-30 23:54:34 +0800
+Processing by UiController#single_board as HTML
+  Rendering ui/single_board.html.erb within layouts/static
+  Rendered ui/single_board.html.erb within layouts/static (Duration: 0.8ms | Allocations: 334)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 11573)
+
+
+Started GET "/boards/6" for 127.0.0.1 at 2020-06-30 23:56:26 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"id"=>"6"}
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.0ms | Allocations: 6687)
+
+
+Started GET "/api/boards/6" for 127.0.0.1 at 2020-06-30 23:56:29 +0800
+Processing by Api::BoardsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/boards_controller.rb:23:in `show'
+  Rendering api/boards/show.json.jbuilder
+  [1m[36mList Load (2.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."board_id" = $1[0m  [["board_id", 6]]
+  ↳ app/views/api/boards/show.json.jbuilder:3
+  [1m[36mCard Load (2.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 22]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 23]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  [1m[36mCard Load (2.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."list_id" = $1[0m  [["list_id", 24]]
+  ↳ app/views/api/boards/show.json.jbuilder:6
+  Rendered api/boards/show.json.jbuilder (Duration: 202.5ms | Allocations: 22445)
+Completed 200 OK in 261ms (Views: 185.8ms | ActiveRecord: 34.2ms | Allocations: 29140)
+
+

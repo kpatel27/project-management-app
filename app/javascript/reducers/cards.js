@@ -9,6 +9,8 @@ const cards = (state = [], action) => {
     case types.CREATE_CARD_SUCCESS:
       const card = action.payload;
       return state.concat(card);
+    case types.FETCH_CARD_SUCCESS:
+      return state.concat(action.payload);
     default:
       return state;
   }

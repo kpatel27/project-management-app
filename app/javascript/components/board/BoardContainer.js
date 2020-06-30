@@ -1,20 +1,34 @@
-import { connect } from 'react-redux';
-import Board from './Board';
-import { fetchBoard } from '../../actions/BoardActions';
+import { connect } from "react-redux";
+import Board from "./Board";
+import { fetchBoard } from "../../actions/BoardActions";
 
 const mapStateToProps = (state, ownProps) => {
-  if (ownProps.match.params[0] === 'boards') {
+  let boardId = null;
+
+  if (ownProps.match.params[0] === "boards") {
+    boardId = +ownProps.match.params.id;
+  } else {
+    // url is /cards/:id
+    if (state.cards.length > 0) {
+      const card = state.cards.find((c) => c.id === +ownProps.match.params.id);
+      boardId = card.board_id;
+    }
+  }
+
+  if (boardId) {
     return {
-      board: state.boards.find(board => board.id === +ownProps.match.params.id),
+      boardId,
+      board: state.boards.find((board) => board.id === boardId),
     };
   } else {
+    return { boardId };
   }
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    onFetchBoard: () => {
-      dispatch(fetchBoard(ownProps.match.params.id));
+    onFetchBoard: (boardId) => {
+      dispatch(fetchBoard(boardId));
     },
   };
 };

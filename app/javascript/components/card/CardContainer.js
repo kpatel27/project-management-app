@@ -1,13 +1,22 @@
-import { connect } from 'react-redux';
-import Card from './Card';
-import { fetchCard } from '../../actions/CardActions';
+import { connect } from "react-redux";
+import Card from "./Card";
+import { fetchCard } from "../../actions/CardActions";
 
-const mapStateToProps = (state, ownProps) => ({});
+const mapStateToProps = (state, ownProps) => {
+  let card;
+  if (state.cards.length > 0) {
+    card = state.cards.find((c) => c.id === +ownProps.match.params.id);
+  }
+  return {
+    state,
+    card,
+  };
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onFetchCard: (id, callback) => {
-      dispatch(fetchCard(id, callback));
+    onFetchCard: (id) => {
+      dispatch(fetchCard(id));
     },
   };
 };

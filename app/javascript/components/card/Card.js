@@ -1,6 +1,14 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import moment from "moment";
 
 class Card extends Component {
+  state = {
+    title: this.props.card && this.props.card.title,
+    due_date: this.props.card && this.props.card.due_date,
+    description: this.props.card && this.props.card.description,
+  };
+
   componentDidMount() {
     if (!this.props.card) {
       this.props.onFetchCard(this.props.match.params.id);
@@ -11,19 +19,35 @@ class Card extends Component {
     //
   };
 
+  handleModalClose = () => {
+    this.props.history.push(`/boards/${this.props.card.board_id}`);
+  };
+
+  handleTitleChange = (e) => {
+    this.setState({ title: e.target.value });
+  };
+
   render() {
+    const dueDate =
+      moment(this.props.card.due_date).format("MMM D") +
+      " at " +
+      moment(this.props.card.due_date).format("LT");
+
     return (
       <div id="modal-container">
         <div className="screen"></div>
         <div id="modal">
-          <i className="x-icon icon close-modal"></i>
+          <i
+            className="x-icon icon close-modal"
+            onClick={this.handleModalClose}
+          ></i>
           <header>
             <i className="card-icon icon .close-modal"></i>
             <textarea
               className="list-title"
               style={{ height: "45px" }}
-              defaultValue="Cards do many cool things. Click on this card to open it and learn
-              more..."
+              value={this.state.title}
+              onChange={this.handleTitleChange}
             ></textarea>
             <p>
               in list <a className="link">Stuff to try (this is a list)</a>
@@ -68,7 +92,10 @@ class Card extends Component {
                         checked=""
                         onChange={this.handleToggleCheckbox}
                       />
-                      Aug 4 at 10:42 AM <span>(past due)</span>
+                      <span>
+                        {dueDate}
+                        (past due)
+                      </span>
                     </div>
                   </li>
                 </ul>
@@ -256,4 +283,4 @@ class Card extends Component {
   }
 }
 
-export default Card;
+export default withRouter(Card);

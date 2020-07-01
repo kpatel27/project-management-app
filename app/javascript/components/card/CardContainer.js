@@ -8,7 +8,6 @@ const mapStateToProps = (state, ownProps) => {
     card = state.cards.find((c) => c.id === +ownProps.match.params.id);
   }
   return {
-    state,
     card,
   };
 };

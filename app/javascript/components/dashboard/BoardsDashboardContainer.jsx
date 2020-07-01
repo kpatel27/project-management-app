@@ -5,17 +5,17 @@ import BoardsDashboard from "./BoardsDashboard";
 import Popover from "../shared/Popover";
 import NewBoardFormContainer from "./NewBoardFormContainer";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    boards: state.boards
+    boards: state.boards,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onFetchBoards: () => {
       dispatch(actions.fetchBoards());
-    }
+    },
   };
 };
 
@@ -24,31 +24,31 @@ class BoardsDashboardContainer extends React.Component {
     popover: {
       visible: false,
       attachedTo: null,
-      type: null
-    }
+      type: null,
+    },
   };
   componentDidMount() {
     this.props.onFetchBoards();
   }
-  handleNewBoardClick = e => {
+  handleNewBoardClick = (e) => {
     this.setState({
       popover: {
         visible: true,
         attachedTo: e.currentTarget,
-        type: "new-board"
-      }
+        type: "new-board",
+      },
     });
   };
 
-  handleClosePopoverClick = e => {
+  handleClosePopoverClick = (e) => {
     e.preventDefault();
 
     this.setState({
       popover: {
         visible: false,
         attachedTo: null,
-        type: null
-      }
+        type: null,
+      },
     });
   };
 

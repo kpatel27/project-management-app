@@ -1,11 +1,7 @@
 import moment from "moment";
 
 const dueDate = (card) => {
-  return (
-    moment(card.due_date).format("MMM D") +
-    " at " +
-    moment(card.due_date).format("LT")
-  );
+  return moment(card.due_date).format("MMM D [at] LT");
 };
 
 const dueClass = (card) => {

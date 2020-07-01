@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import moment from "moment";
+import { dueClass, dueDate } from "../../utils/dueDate";
 
 class Card extends Component {
   state = {
@@ -28,11 +28,6 @@ class Card extends Component {
   };
 
   render() {
-    const dueDate =
-      moment(this.props.card.due_date).format("MMM D") +
-      " at " +
-      moment(this.props.card.due_date).format("LT");
-
     return (
       <div id="modal-container">
         <div className="screen"></div>
@@ -84,7 +79,10 @@ class Card extends Component {
                   </li>
                   <li className="due-date-section">
                     <h3>Due Date</h3>
-                    <div id="dueDateDisplay" className="overdue completed">
+                    <div
+                      id="dueDateDisplay"
+                      className={dueClass(this.props.card)}
+                    >
                       <input
                         id="dueDateCheckbox"
                         type="checkbox"
@@ -93,7 +91,7 @@ class Card extends Component {
                         onChange={this.handleToggleCheckbox}
                       />
                       <span>
-                        {dueDate}
+                        {dueDate(this.props.card)}
                         (past due)
                       </span>
                     </div>

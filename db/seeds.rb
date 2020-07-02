@@ -14,14 +14,13 @@
 Board.destroy_all
 List.destroy_all
 Card.destroy_all
-board1 = Board.create({title: "First board"})
+board1 = Board.create({ title: "First board" })
 
-list1 = List.create({title: 'First List', board_id: board1.id })
-list2 = List.create({title: 'Second List', board_id: board1.id })
+list1 = List.create({ title: 'First List', board_id: board1.id })
+list2 = List.create({ title: 'Second List', board_id: board1.id })
 
-card1 = Card.create({title: 'Card 1 of List 1', due_date:2.days.from_now, description:'Card1_1', list_id: list1.id})
-card2 = Card.create({title: 'Card 2 of List 1', due_date:3.days.from_now, description:'Card1_2', list_id:list1.id})
-card3 = Card.create({title: 'Card 1 of List 2', due_date:4.days.from_now, description:'Card2_1', list_id:list2.id})
-card4 = Card.create({title: 'Card 2 of List 2', due_date:5.days.from_now, description:'Card2_2', list_id:list2.id})
-card4 = Card.create({title: 'Card 3 of List 2', due_date:6.days.from_now, description:'Card2_3', list_id:list2.id})
-
+card1 = Card.create({ title: 'Card 1 of List 1', due_date: 2.days.from_now, description: 'Card1_1', list_id: list1.id, completed: true })
+card2 = Card.create({ title: 'Card 2 of List 1', due_date: 3.days.from_now, description: 'Card1_2', list_id: list1.id })
+card3 = Card.create({ title: 'Card 1 of List 2', due_date: 4.days.ago, description: 'Card2_1', list_id: list2.id })
+card4 = Card.create({ title: 'Card 2 of List 2', due_date: 5.days.ago, description: 'Card2_2', list_id: list2.id, completed: true })
+card4 = Card.create({ title: 'Card 3 of List 2', due_date: 6.days.from_now, description: 'Card2_3', list_id: list2.id })

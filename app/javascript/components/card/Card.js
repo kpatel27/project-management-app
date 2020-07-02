@@ -7,6 +7,7 @@ class Card extends Component {
     title: this.props.card && this.props.card.title,
     due_date: this.props.card && this.props.card.due_date,
     description: this.props.card && this.props.card.description,
+    completed: this.props.card && this.props.card.completed,
   };
 
   componentDidMount() {
@@ -15,8 +16,10 @@ class Card extends Component {
     }
   }
 
-  handleToggleCheckbox = () => {
-    //
+  handleToggleCheckbox = (e) => {
+    this.handleEditItemSubmit({ completed: !this.state.completed }, () => {
+      this.setState({ completed: !this.state.completed });
+    });
   };
 
   handleModalClose = () => {
@@ -27,7 +30,26 @@ class Card extends Component {
     this.setState({ title: e.target.value });
   };
 
+  handleTitleSubmit = (e) => {
+    e.preventDefault();
+    this.handleEditItemSubmit({ title: this.state.title });
+  };
+
+  handleEditItemSubmit = (newProps, callback) => {
+    this.props.onEditCard(this.props.card.id, newProps, callback);
+  };
+
+  handleListenForEnter = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      e.target.blur();
+    }
+  };
+
   render() {
+    const dueStatus = dueClass(this.props.card);
+    console.log(dueStatus);
+
     return (
       <div id="modal-container">
         <div className="screen"></div>
@@ -43,6 +65,8 @@ class Card extends Component {
               style={{ height: "45px" }}
               value={this.state.title}
               onChange={this.handleTitleChange}
+              onBlur={this.handleTitleSubmit}
+              onKeyPress={this.handleListenForEnter}
             ></textarea>
             <p>
               in list <a className="link">Stuff to try (this is a list)</a>
@@ -81,18 +105,18 @@ class Card extends Component {
                     <h3>Due Date</h3>
                     <div
                       id="dueDateDisplay"
-                      className={dueClass(this.props.card)}
+                      className={dueStatus}
+                      onClick={this.handleToggleCheckbox}
                     >
                       <input
                         id="dueDateCheckbox"
                         type="checkbox"
                         className="checkbox"
-                        checked=""
-                        onChange={this.handleToggleCheckbox}
+                        checked={this.state.completed}
                       />
+                      {dueDate(this.props.card)}
                       <span>
-                        {dueDate(this.props.card)}
-                        (past due)
+                        {dueStatus === "overdue" ? " (past due)" : ""}
                       </span>
                     </div>
                   </li>

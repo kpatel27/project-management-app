@@ -11,6 +11,15 @@ const cards = (state = [], action) => {
       return state.concat(card);
     case types.FETCH_CARD_SUCCESS:
       return state.concat(action.payload);
+    case types.EDIT_CARD_SUCCESS:
+      const editedCard = action.payload;
+      return state.map((card) => {
+        if (card.id === editedCard.id) {
+          return editedCard;
+        } else {
+          return card;
+        }
+      });
     default:
       return state;
   }

@@ -1,10 +1,11 @@
 import moment from "moment";
 
 const dueDate = (card) => {
-  return moment(card.due_date).format("MMM D [at] LT");
+  return card ? moment(card.due_date).format("MMM D [at] LT") : "";
 };
 
 const dueClass = (card) => {
+  if (!card) return "";
   const diff = moment(card.due_date).diff(new Date(), "days");
   if (card.completed) {
     return "completed";

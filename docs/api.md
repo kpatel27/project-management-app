@@ -1,64 +1,64 @@
 <!-- TOC -->
 
 - [1. API Documentation](#1-api-documentation)
-    - [1.1. Example API Error Format](#11-example-api-error-format)
-    - [1.2. GET /](#12-get-)
-    - [1.3. GET /boards/:id](#13-get-boardsid)
-    - [1.4. GET /cards/:id](#14-get-cardsid)
-    - [1.5. GET /ui](#15-get-ui)
-    - [1.6. GET /api/boards](#16-get-apiboards)
-        - [1.6.1. Controller#Action](#161-controlleraction)
-        - [1.6.2. Expected parameters](#162-expected-parameters)
-        - [1.6.3. Example Response](#163-example-response)
-    - [1.7. POST /api/boards](#17-post-apiboards)
-        - [1.7.1. Controller#Action](#171-controlleraction)
-        - [1.7.2. Expected Payload](#172-expected-payload)
-        - [1.7.3. Successful Response](#173-successful-response)
-            - [1.7.3.1. Example Response](#1731-example-response)
-        - [1.7.4. Error Response](#174-error-response)
-    - [1.8. GET /api/boards/:id](#18-get-apiboardsid)
-        - [1.8.1. Controller#Action](#181-controlleraction)
-        - [1.8.2. Expected Payload](#182-expected-payload)
-        - [1.8.3. Successful Response](#183-successful-response)
-            - [1.8.3.1. Example Response](#1831-example-response)
-        - [1.8.4. Error Response](#184-error-response)
-    - [1.9. POST /api/lists](#19-post-apilists)
-        - [1.9.1. Controller#Action](#191-controlleraction)
-        - [1.9.2. Expected Payload](#192-expected-payload)
-        - [1.9.3. Successful Response](#193-successful-response)
-            - [1.9.3.1. Example Response](#1931-example-response)
-        - [1.9.4. Error Response](#194-error-response)
-    - [1.10. PUT/PATCH /api/lists/:id](#110-putpatch-apilistsid)
-        - [1.10.1. Controller#Action](#1101-controlleraction)
-        - [1.10.2. Expected Payload](#1102-expected-payload)
-        - [1.10.3. Successful Response](#1103-successful-response)
-            - [1.10.3.1. Example Response](#11031-example-response)
-        - [1.10.4. Error Response](#1104-error-response)
-    - [1.11. POST /api/cards](#111-post-apicards)
-        - [1.11.1. Controller#Action](#1111-controlleraction)
-        - [1.11.2. Expected Payload](#1112-expected-payload)
-        - [1.11.3. Successful Response](#1113-successful-response)
-            - [1.11.3.1. Example Response](#11131-example-response)
-        - [1.11.4. Error Response](#1114-error-response)
-    - [1.12. GET /api/cards/:id](#112-get-apicardsid)
-        - [1.12.1. Controller#Action](#1121-controlleraction)
-        - [1.12.2. Expected Payload](#1122-expected-payload)
-        - [1.12.3. Successful Response](#1123-successful-response)
-            - [1.12.3.1. Example Response](#11231-example-response)
-        - [1.12.4. Error Response](#1124-error-response)
-    - [1.13. PUT/PATCH /api/cards/:id](#113-putpatch-apicardsid)
-        - [1.13.1. Controller#Action](#1131-controlleraction)
-        - [1.13.2. Expected Payload](#1132-expected-payload)
-            - [1.13.2.1. Example Payload](#11321-example-payload)
-        - [1.13.3. Successful Response](#1133-successful-response)
-            - [1.13.3.1. Example Response](#11331-example-response)
-        - [1.13.4. Error Response](#1134-error-response)
-    - [1.14. POST /api/comments](#114-post-apicomments)
-        - [1.14.1. Controller#Action](#1141-controlleraction)
-        - [1.14.2. Expected Payload](#1142-expected-payload)
-        - [1.14.3. Successful Response](#1143-successful-response)
-            - [1.14.3.1. Example Response](#11431-example-response)
-        - [1.14.4. Error Response](#1144-error-response)
+  - [1.1. Example API Error Format](#11-example-api-error-format)
+  - [1.2. GET /](#12-get-)
+  - [1.3. GET /boards/:id](#13-get-boardsid)
+  - [1.4. GET /cards/:id](#14-get-cardsid)
+  - [1.5. GET /ui](#15-get-ui)
+  - [1.6. GET /api/boards](#16-get-apiboards)
+    - [1.6.1. Controller#Action](#161-controlleraction)
+    - [1.6.2. Expected parameters](#162-expected-parameters)
+    - [1.6.3. Example Response](#163-example-response)
+  - [1.7. POST /api/boards](#17-post-apiboards)
+    - [1.7.1. Controller#Action](#171-controlleraction)
+    - [1.7.2. Expected Payload](#172-expected-payload)
+    - [1.7.3. Successful Response](#173-successful-response)
+      - [1.7.3.1. Example Response](#1731-example-response)
+    - [1.7.4. Error Response](#174-error-response)
+  - [1.8. GET /api/boards/:id](#18-get-apiboardsid)
+    - [1.8.1. Controller#Action](#181-controlleraction)
+    - [1.8.2. Expected Payload](#182-expected-payload)
+    - [1.8.3. Successful Response](#183-successful-response)
+      - [1.8.3.1. Example Response](#1831-example-response)
+    - [1.8.4. Error Response](#184-error-response)
+  - [1.9. POST /api/lists](#19-post-apilists)
+    - [1.9.1. Controller#Action](#191-controlleraction)
+    - [1.9.2. Expected Payload](#192-expected-payload)
+    - [1.9.3. Successful Response](#193-successful-response)
+      - [1.9.3.1. Example Response](#1931-example-response)
+    - [1.9.4. Error Response](#194-error-response)
+  - [1.10. PUT/PATCH /api/lists/:id](#110-putpatch-apilistsid)
+    - [1.10.1. Controller#Action](#1101-controlleraction)
+    - [1.10.2. Expected Payload](#1102-expected-payload)
+    - [1.10.3. Successful Response](#1103-successful-response)
+      - [1.10.3.1. Example Response](#11031-example-response)
+    - [1.10.4. Error Response](#1104-error-response)
+  - [1.11. POST /api/cards](#111-post-apicards)
+    - [1.11.1. Controller#Action](#1111-controlleraction)
+    - [1.11.2. Expected Payload](#1112-expected-payload)
+    - [1.11.3. Successful Response](#1113-successful-response)
+      - [1.11.3.1. Example Response](#11131-example-response)
+    - [1.11.4. Error Response](#1114-error-response)
+  - [1.12. GET /api/cards/:id](#112-get-apicardsid)
+    - [1.12.1. Controller#Action](#1121-controlleraction)
+    - [1.12.2. Expected Payload](#1122-expected-payload)
+    - [1.12.3. Successful Response](#1123-successful-response)
+      - [1.12.3.1. Example Response](#11231-example-response)
+    - [1.12.4. Error Response](#1124-error-response)
+  - [1.13. PUT/PATCH /api/cards/:id](#113-putpatch-apicardsid)
+    - [1.13.1. Controller#Action](#1131-controlleraction)
+    - [1.13.2. Expected Payload](#1132-expected-payload)
+      - [1.13.2.1. Example Payload](#11321-example-payload)
+    - [1.13.3. Successful Response](#1133-successful-response)
+      - [1.13.3.1. Example Response](#11331-example-response)
+    - [1.13.4. Error Response](#1134-error-response)
+  - [1.14. POST /api/comments](#114-post-apicomments)
+    - [1.14.1. Controller#Action](#1141-controlleraction)
+    - [1.14.2. Expected Payload](#1142-expected-payload)
+    - [1.14.3. Successful Response](#1143-successful-response)
+      - [1.14.3.1. Example Response](#11431-example-response)
+    - [1.14.4. Error Response](#1144-error-response)
 
 <!-- /TOC -->
 
@@ -205,10 +205,7 @@ The response status code is 200.
           "id": 7,
           "title": "1",
           "due_date": null,
-          "labels": [
-            "red",
-            "purple"
-          ],
+          "labels": ["red", "purple"],
           "description": "Selectors",
           "list_id": 3,
           "board_id": 1,
@@ -240,7 +237,7 @@ NOTE: The `board_id` where the list will reside is required.
 ```json
 {
   "board_id": 1,
-  "list": { 
+  "list": {
     "title": "My list"
   }
 }
@@ -420,7 +417,7 @@ Update a card. This also generates card actions in the following situations:
 
 ### 1.13.1. Controller#Action
 
-`api/cards#update `
+`api/cards#update`
 
 ### 1.13.2. Expected Payload
 

@@ -29,10 +29,25 @@ class Api::CardsController < ApplicationController
     end
   end
 
+  def update
+    @card = Card.find(params[:id])
+
+    if @card.update(card_params)
+      render :update, status: :accepted
+    else
+      @error = @list.errors.full_messages.join(', ')
+      render 'api/shared/error', status: :unprocessable_entity
+    end
+  rescue ActiveRecord::RecordNotFound
+    wrong_id
+  rescue ActionController::ParameterMissing
+    parameter_missing
+  end
+
   private
 
   def card_params
-    params.require(:card).permit(:title, :due_date, :labels, :description, :position)
+    params.require(:card).permit(:title, :list_id, :due_date, :labels, :description, :position, :archived, :completed)
   end
 
   def wrong_id

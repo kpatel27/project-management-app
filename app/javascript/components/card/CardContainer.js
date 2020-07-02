@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Card from "./Card";
-import { fetchCard } from "../../actions/CardActions";
+import { fetchCard, editCard } from "../../actions/CardActions";
 
 const mapStateToProps = (state, ownProps) => {
   let card;
@@ -16,6 +16,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onFetchCard: (id) => {
       dispatch(fetchCard(id));
+    },
+    onEditCard: (id, newProps, callback) => {
+      dispatch(editCard(id, newProps, callback));
     },
   };
 };

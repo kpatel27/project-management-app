@@ -18,7 +18,6 @@ class Api::ListsController < ApplicationController
 
   def update
     @list = List.find(params[:id])
-    puts params
     
     if @list.update(list_params)
       render :update, status: :accepted

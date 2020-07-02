@@ -2,8 +2,8 @@ import React from "react";
 import BoardTile from "./BoardTile";
 import CreateBoardTile from "./CreateBoardTile";
 
-const BoardsDashboard = props => {
-  let boards = props.boards.map(board => (
+const BoardsDashboard = (props) => {
+  let boards = props.boards.map((board) => (
     <BoardTile title={board.title} id={board.id} key={board.id} />
   ));
 

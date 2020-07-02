@@ -20,6 +20,7 @@ class Api::CardsController < ApplicationController
 
   def show
     @card = Card.find(params[:id])
+
     if @card
       render 'api/cards/show', status: 201
     else

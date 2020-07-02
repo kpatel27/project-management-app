@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import CardListingContainer from "../card-listing/CardListingContainer";
-import AddCardContainer from "../add-card/AddCardContainer";
+import React, { Component } from 'react';
+import CardListingContainer from '../card-listing/CardListingContainer';
+import AddCardContainer from '../add-card/AddCardContainer';
 
 class List extends Component {
   state = {
@@ -12,11 +12,11 @@ class List extends Component {
     this.setState({ showEditForm: !this.state.showEditForm });
   };
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({ title: e.target.value });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     if (!this.state.title) {
       e.target.focus();
     } else {
@@ -33,33 +33,33 @@ class List extends Component {
       <div
         className={`list-wrapper${
           this.props.addCardListId === this.props.id
-            ? " add-dropdown-active"
-            : ""
+            ? ' add-dropdown-active'
+            : ''
         }`}
       >
-        <div className="list-background">
-          <div className="list">
-            <a className="more-icon sm-icon" href=""></a>
+        <div className='list-background'>
+          <div className='list'>
+            <a className='more-icon sm-icon' href=''></a>
             <div>
               {this.state.showEditForm ? (
                 <input
-                  type="text"
-                  className="list-title"
+                  type='text'
+                  className='list-title'
                   value={this.state.title}
                   onChange={this.handleChange}
                   onBlur={this.handleSubmit}
                 />
               ) : (
-                <p className="list-title" onClick={this.toggleEditForm}>
+                <p className='list-title' onClick={this.toggleEditForm}>
                   {this.props.title}
                 </p>
               )}
             </div>
-            <div className="add-dropdown add-top">
-              <div className="card"></div>
-              <a className="button">Add</a>
-              <i className="x-icon icon"></i>
-              <div className="add-options">
+            <div className='add-dropdown add-top'>
+              <div className='card'></div>
+              <a className='button'>Add</a>
+              <i className='x-icon icon'></i>
+              <div className='add-options'>
                 <span>...</span>
               </div>
             </div>

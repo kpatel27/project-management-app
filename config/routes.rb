@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :boards, only: [:index, :create, :show]
     resources :lists, only: [:create, :update]
     resources :cards, only: [:create, :show, :update, :delete]
+    resources :comments, only: [:create, :show, :update, :delete]
   end
 
   get '/boards/:id', to: 'home#index'

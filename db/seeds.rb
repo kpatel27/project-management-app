@@ -15,12 +15,17 @@ Board.destroy_all
 List.destroy_all
 Card.destroy_all
 board1 = Board.create({ title: "First board" })
+board2 = Board.create({ title: "Second board" })
 
 list1 = List.create({ title: 'First List', board_id: board1.id })
 list2 = List.create({ title: 'Second List', board_id: board1.id })
+list3 = List.create({ title: 'First List in Funky town', board_id: board2.id })
 
 card1 = Card.create({ title: 'Card 1 of List 1', due_date: 2.days.from_now, description: 'Card1_1', list_id: list1.id, completed: true })
 card2 = Card.create({ title: 'Card 2 of List 1', due_date: 3.days.from_now, description: 'Card1_2', list_id: list1.id })
 card3 = Card.create({ title: 'Card 1 of List 2', due_date: 4.days.ago, description: 'Card2_1', list_id: list2.id })
 card4 = Card.create({ title: 'Card 2 of List 2', due_date: 5.days.ago, description: 'Card2_2', list_id: list2.id, completed: true })
-card4 = Card.create({ title: 'Card 3 of List 2', due_date: 6.days.from_now, description: 'Card2_3', list_id: list2.id })
+card5 = Card.create({ title: 'Card 3 of List 2', due_date: 6.days.from_now, description: 'Card2_3', list_id: list2.id })
+
+card6 = Card.create({ title: 'Card 1 of List 3', due_date: 2.days.from_now, description: 'Card1_3', list_id: list3.id })
+card6 = Card.create({ title: 'Card 2 of List 3', due_date: 2.days.ago, description: 'Card2_3', list_id: list3.id, completed: true })

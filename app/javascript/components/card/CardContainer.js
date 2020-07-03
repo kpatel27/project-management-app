@@ -1,14 +1,15 @@
-import { connect } from 'react-redux';
-import Card from './Card';
-import { fetchCard, editCard } from '../../actions/CardActions';
+import { connect } from "react-redux";
+import Card from "./Card";
+import { fetchCard, editCard } from "../../actions/CardActions";
+import { createComment } from "../../actions/CommentActions";
 
 const mapStateToProps = (state, ownProps) => {
   let card;
   let list;
   if (state.cards.length > 0) {
-    card = state.cards.find(c => c.id === +ownProps.match.params.id);
+    card = state.cards.find((c) => c.id === +ownProps.match.params.id);
     list =
-      state.lists.length > 0 && state.lists.find(l => l.id === card.list_id);
+      state.lists.length > 0 && state.lists.find((l) => l.id === card.list_id);
   }
   return {
     card,
@@ -18,11 +19,14 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onFetchCard: id => {
+    onFetchCard: (id) => {
       dispatch(fetchCard(id));
     },
     onEditCard: (id, newProps, callback) => {
       dispatch(editCard(id, newProps, callback));
+    },
+    onCreateComment: (id, text, callback) => {
+      dispatch(createComment(id, text, callback));
     },
   };
 };
